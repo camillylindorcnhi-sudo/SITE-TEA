@@ -1847,65 +1847,75 @@
        HERO
        ══════════════════════════════════════ */
     @media (max-width: 768px) {
-      /* Single column, flex so order works */
+      /* Single-column flex so order: -1 works */
       .hero__inner {
-        display: flex;
-        flex-direction: column;
-        min-height: auto;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: auto !important;
       }
 
-      /* Image shown above text */
+      /* Outer column — establish height */
       .hero__img-col {
         display: block !important;
-        width: 100%;
-        height: 45vh;
-        min-height: 280px;
+        width: 100% !important;
+        height: 50vh !important;
+        min-height: 300px !important;
         order: -1;
         flex-shrink: 0;
-        background-image: url('familia.png');
-        background-size: cover;
-        background-position: center top;
+        position: relative;
+        align-self: auto !important;
       }
 
-      /* Remove desktop-only glow, frame margins, and left-edge fade */
-      .hero__img-glow  { display: none; }
+      /* Frame — fill the column, no margins or rounding */
       .hero__img-frame {
-        margin: 0;
-        border-radius: 0;
-        height: 100%;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        flex: unset !important;
       }
+
+      /* Panel — the actual background-image, force all values */
       .hero__img-panel {
-        background-position: center top;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-image: url('familia.png') !important;
+        background-size: cover !important;
+        background-position: center top !important;
         mask-image: none !important;
         -webkit-mask-image: none !important;
       }
 
-      /* Compact text block — no excess gap */
+      /* Hide glow — not needed on mobile */
+      .hero__img-glow { display: none !important; }
+
+      /* Compact text — no excess vertical gap */
       .hero__text {
-        padding: 2rem 1.5rem 2.5rem;
-        max-width: 100%;
-        gap: 1.1rem;
+        padding: 2rem 1.5rem 2.5rem !important;
+        max-width: 100% !important;
+        gap: 1.1rem !important;
       }
 
       .hero__title {
-        font-size: clamp(2.2rem, 8vw, 3.5rem);
-        line-height: 0.97;
+        font-size: clamp(2.2rem, 8vw, 3.5rem) !important;
+        line-height: 0.97 !important;
       }
 
       .hero__sub {
-        font-size: 0.93rem;
-        max-width: 100%;
+        font-size: 0.93rem !important;
+        max-width: 100% !important;
       }
 
-      .hero__scroll { display: none; }
+      .hero__scroll { display: none !important; }
       .hero-icons .hi-bg1,
-      .hero-icons .hi-bg2 { display: none; }
+      .hero-icons .hi-bg2 { display: none !important; }
     }
 
     @media (max-width: 480px) {
-      .hero__img-col  { height: 38vh; min-height: 240px; }
-      .hero__text     { padding: 1.75rem 1.25rem 2rem; }
-      .hero__title    { font-size: clamp(2rem, 12vw, 3rem); }
+      .hero__img-col  { height: 42vh !important; min-height: 260px !important; }
+      .hero__text     { padding: 1.75rem 1.25rem 2rem !important; }
+      .hero__title    { font-size: clamp(2rem, 12vw, 3rem) !important; }
     }
 
     /* ══════════════════════════════════════
