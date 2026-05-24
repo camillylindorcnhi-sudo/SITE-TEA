@@ -1847,34 +1847,65 @@
        HERO
        ══════════════════════════════════════ */
     @media (max-width: 768px) {
+      /* Single column, flex so order works */
       .hero__inner {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         min-height: auto;
       }
 
+      /* Image shown above text */
+      .hero__img-col {
+        display: block !important;
+        width: 100%;
+        height: 45vh;
+        min-height: 280px;
+        order: -1;
+        flex-shrink: 0;
+        background-image: url('familia.png');
+        background-size: cover;
+        background-position: center top;
+      }
+
+      /* Remove desktop-only glow, frame margins, and left-edge fade */
+      .hero__img-glow  { display: none; }
+      .hero__img-frame {
+        margin: 0;
+        border-radius: 0;
+        height: 100%;
+      }
+      .hero__img-panel {
+        background-position: center top;
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+      }
+
+      /* Compact text block — no excess gap */
       .hero__text {
-        padding: 7rem 1.5rem 3.5rem;
+        padding: 2rem 1.5rem 2.5rem;
         max-width: 100%;
+        gap: 1.1rem;
       }
 
       .hero__title {
-        font-size: clamp(2.8rem, 12vw, 4rem);
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+        line-height: 0.97;
       }
 
       .hero__sub {
-        font-size: 0.98rem;
+        font-size: 0.93rem;
         max-width: 100%;
       }
 
-      .hero__img-col  { display: none; }
-      .hero__scroll   { display: none; }
+      .hero__scroll { display: none; }
       .hero-icons .hi-bg1,
-      .hero-icons .hi-bg2 { display: none; } /* hide blurred bg icons on small screens */
+      .hero-icons .hi-bg2 { display: none; }
     }
 
     @media (max-width: 480px) {
-      .hero__text { padding: 6rem 1.25rem 3rem; }
-      .hero__title { font-size: clamp(2.4rem, 14vw, 3.5rem); }
+      .hero__img-col  { height: 38vh; min-height: 240px; }
+      .hero__text     { padding: 1.75rem 1.25rem 2rem; }
+      .hero__title    { font-size: clamp(2rem, 12vw, 3rem); }
     }
 
     /* ══════════════════════════════════════
@@ -1914,6 +1945,25 @@
       .entrevistas__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+      }
+
+      /* Ensure each card and its video fill correctly */
+      .entrevista-card {
+        width: 100%;
+        display: block;
+      }
+
+      .ecard-video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Thumbnail placeholder gradient always visible until video loads */
+      .entrevista-card__thumb {
+        background-size: cover;
+        background-repeat: no-repeat;
       }
     }
 
