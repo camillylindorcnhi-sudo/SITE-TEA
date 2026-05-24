@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(winget install *)",
+      "Bash(Get-ChildItem \"C:\\\\site-TEA\\\\frames\")",
+      "Bash(Measure-Object)",
+      "Bash(Select-Object -ExpandProperty Count)",
+      "Bash(Select-Object -First 3)",
+      "Bash(Select-Object Name, Length)",
+      "PowerShell(\\(Get-ChildItem \"C:\\\\site-TEA\\\\frames\"\\).Count; Get-ChildItem \"C:\\\\site-TEA\\\\frames\" | Select-Object -First 3 | Select-Object Name, Length)",
+      "PowerShell($c = Get-Content 'C:\\\\site-TEA\\\\index.html' -Raw; $bodyStart = $c.IndexOf\\('<body>'\\); $bodyEnd = $c.IndexOf\\('</body>'\\); Write-Output \"body tag at char: $bodyStart\"; Write-Output \"body close at char: $bodyEnd\"; Write-Output \"total chars: $\\($c.Length\\)\")",
+      "PowerShell(Get-ChildItem \"C:\\\\site-TEA\\\\entrevistas\\\\\" -ErrorAction SilentlyContinue; if \\(-not \\(Test-Path \"C:\\\\site-TEA\\\\entrevistas\"\\)\\) { Write-Output \"FOLDER NOT FOUND\" }2)"
+    ]
+  }
+}
