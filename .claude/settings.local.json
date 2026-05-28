@@ -9,7 +9,9 @@
       "Bash(Select-Object Name, Length)",
       "PowerShell(\\(Get-ChildItem \"C:\\\\site-TEA\\\\frames\"\\).Count; Get-ChildItem \"C:\\\\site-TEA\\\\frames\" | Select-Object -First 3 | Select-Object Name, Length)",
       "PowerShell($c = Get-Content 'C:\\\\site-TEA\\\\index.html' -Raw; $bodyStart = $c.IndexOf\\('<body>'\\); $bodyEnd = $c.IndexOf\\('</body>'\\); Write-Output \"body tag at char: $bodyStart\"; Write-Output \"body close at char: $bodyEnd\"; Write-Output \"total chars: $\\($c.Length\\)\")",
-      "PowerShell(Get-ChildItem \"C:\\\\site-TEA\\\\entrevistas\\\\\" -ErrorAction SilentlyContinue; if \\(-not \\(Test-Path \"C:\\\\site-TEA\\\\entrevistas\"\\)\\) { Write-Output \"FOLDER NOT FOUND\" }2)"
+      "PowerShell(Get-ChildItem \"C:\\\\site-TEA\\\\entrevistas\\\\\" -ErrorAction SilentlyContinue; if \\(-not \\(Test-Path \"C:\\\\site-TEA\\\\entrevistas\"\\)\\) { Write-Output \"FOLDER NOT FOUND\" }2)",
+      "Bash(cp index.html index.html.bak)",
+      "Bash(mv index_new.html index.html)"
     ]
   }
 }

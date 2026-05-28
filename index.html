@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<!-- ============================================================
-     EVENTO ESPECIAL — CLÍNICA ESPAÇO SAÚDE
-     Portal de evento temático TEA
-     ============================================================ -->
+
 
 <head>
 
-  <!-- ──────────────────────────────────────────────────────────
-       1. META ESSENCIAIS
-       ────────────────────────────────────────────────────────── -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- Título da aba / SEO primário -->
-  <title>Evento Especial — Clínica Espaço Saúde</title>
+  <title>Nosso Dia Inesquecível — Clínica Espaço Saúde</title>
 
   <!-- Descrição exibida em buscadores (max ~160 chars) -->
   <meta
@@ -29,19 +24,20 @@
 
   <!-- Robots: indexável por padrão; ajuste para noindex antes do lançamento se necessário -->
   <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- Open Graph (compartilhamento em redes sociais) -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Evento Especial — Clínica Espaço Saúde" />
-  <meta property="og:description" content="Vídeos, entrevistas e galeria de fotos do nosso Evento Especial — reviva cada momento." />
+  <meta property="og:title"       content="Nosso Dia Inesquecível — Clínica Espaço Saúde" />
+  <meta property="og:description" content="Vídeos, entrevistas e galeria de fotos do Nosso Dia Inesquecível — reviva cada momento." />
   <meta property="og:image"       content="assets/img/og-cover.jpg" />
   <meta property="og:url"         content="https://eventoespaco.com.br" />
   <meta property="og:locale"      content="pt_BR" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Evento Especial — Clínica Espaço Saúde" />
-  <meta name="twitter:description" content="Vídeos, entrevistas e galeria de fotos do Evento Especial — Clínica Espaço Saúde." />
+  <meta name="twitter:title"       content="Nosso Dia Inesquecível — Clínica Espaço Saúde" />
+  <meta name="twitter:description" content="Vídeos, entrevistas e galeria de fotos do Nosso Dia Inesquecível — Clínica Espaço Saúde." />
   <meta name="twitter:image"       content="assets/img/og-cover.jpg" />
 
   <!-- Favicon -->
@@ -63,28 +59,19 @@
   />
 
 
-  <!-- ──────────────────────────────────────────────────────────
-       3. CDN — GSAP 3.12 + plugins
-       • gsap.min.js      → core
-       • ScrollTrigger    → animações vinculadas ao scroll
-       Ordem importa: core ANTES dos plugins.
-       ────────────────────────────────────────────────────────── -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" defer></script>
 
 
 
-  <!-- ──────────────────────────────────────────────────────────
-       5. ESTILOS GLOBAIS
-       • CSS Custom Properties (paleta TEA + tipografia + espaços)
-       • Reset minimalista
-       • Base do body: fundo escuro, fonte padrão, sem scroll horizontal
-       ────────────────────────────────────────────────────────── -->
+
   <style>
 
-    /* ── 5.1  CSS Variables — Paleta TEA ─────────────────────── */
+    /* ── 5.1  CSS variaveis — Paleta TEA ─────────────────────── */
     :root {
 
       /* ---- Cores principais ---- */
@@ -146,7 +133,6 @@
     }
 
 
-    /* ── 5.7  Reset minimalista ────────────────────────────── */
     *,
     *::before,
     *::after {
@@ -155,13 +141,11 @@
       padding: 0;
     }
 
-    /* Remove list styles de ul/ol usados como componentes de UI */
     ul[role="list"],
     ol[role="list"] {
       list-style: none;
     }
 
-    /* Imagens e mídia responsivas por padrão */
     img,
     video,
     svg,
@@ -170,7 +154,7 @@
       max-width: 100%;
     }
 
-    /* Herança de fonte em inputs */
+
     input,
     button,
     textarea,
@@ -178,7 +162,6 @@
       font: inherit;
     }
 
-    /* Sem animação para quem prefere movimento reduzido */
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -190,7 +173,6 @@
     }
 
 
-    /* ── 5.8  Base — html / body ──────────────────────────── */
     html {
       scroll-behavior: smooth;
       font-size: 16px;
@@ -223,17 +205,10 @@
   </style>
 
 
-  <!-- ──────────────────────────────────────────────────────────
-       6. ESTILOS DE COMPONENTES
-       • Navbar sticky
-       • Hero (grid 2 colunas + bolhas)
-       • Slideshow com barras de progresso
-       ────────────────────────────────────────────────────────── -->
+
   <style>
 
-    /* ══════════════════════════════════════════════════════════
-       6.1  NAVBAR
-       ══════════════════════════════════════════════════════════ */
+ 
 
     .navbar {
       position: sticky;
@@ -362,9 +337,7 @@
     }
 
 
-    /* ══════════════════════════════════════════════════════════
-       6.2  HERO
-       ══════════════════════════════════════════════════════════ */
+
 
     .hero {
       position: relative;
@@ -512,6 +485,12 @@
       overflow: hidden;
     }
 
+    /* Mobile fallback img — hidden on desktop */
+    .hero__img-mobile { display: none; }
+
+    /* Mobile photo icons — hidden on desktop */
+    .hero__photo-icon { display: none; }
+
     /* Photo — four-edge cinematic blend */
     .hero__img-panel {
       width: 100%;
@@ -583,10 +562,6 @@
     }
 
 
-    /* ══════════════════════════════════════════════════════════
-       6.3  HERO ICONS — puzzle-icon.png floats
-       18 icons · sizes 40–90px · no filter · opacity 0.70–0.92
-       ══════════════════════════════════════════════════════════ */
 
     .hero-icons {
       position: absolute; inset: 0; z-index: 10;
@@ -1305,7 +1280,7 @@
       position:absolute;
       bottom:0;left:0;right:0;
       height:clamp(80px,12vh,130px);
-      background:linear-gradient(to bottom,transparent,#0D1B2A);
+      background:none;
       pointer-events:none;
       z-index:2;
     }
@@ -1322,102 +1297,59 @@
     }
 
     .entrevistas__grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:clamp(1rem,2vw,1.5rem);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
     }
 
     .entrevista-card {
-      background:rgba(8,18,34,0.75);
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,0.055);
-      cursor:pointer;
-      transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s ease;
-      opacity:0;
+      background: rgba(8,18,34,0.75);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.055);
+      cursor: pointer;
+      transition: transform .38s cubic-bezier(.22,1,.36,1), box-shadow .38s ease;
+      opacity: 0;
     }
 
-    .entrevista-card:hover { transform:translateY(-10px); }
+    .entrevista-card:hover { transform: translateY(-6px); }
 
-    .entrevista-card--blue:hover   { box-shadow:0 24px 64px rgba(0,0,0,.55),0 0 44px rgba(26,115,200,.22); }
-    .entrevista-card--yellow:hover { box-shadow:0 24px 64px rgba(0,0,0,.55),0 0 44px rgba(245,197,24,.2); }
-    .entrevista-card--red:hover    { box-shadow:0 24px 64px rgba(0,0,0,.55),0 0 44px rgba(224,52,52,.2); }
-    .entrevista-card--green:hover  { box-shadow:0 24px 64px rgba(0,0,0,.55),0 0 44px rgba(106,191,58,.2); }
+    .entrevista-card--blue:hover   { box-shadow: 0 20px 56px rgba(0,0,0,.55), 0 0 40px rgba(26,115,200,.22); }
+    .entrevista-card--yellow:hover { box-shadow: 0 20px 56px rgba(0,0,0,.55), 0 0 40px rgba(245,197,24,.20); }
+    .entrevista-card--red:hover    { box-shadow: 0 20px 56px rgba(0,0,0,.55), 0 0 40px rgba(224,52,52,.20); }
+    .entrevista-card--green:hover  { box-shadow: 0 20px 56px rgba(0,0,0,.55), 0 0 40px rgba(106,191,58,.20); }
 
     .entrevista-card__thumb {
-      position:relative;
-      aspect-ratio:16/9;
-      overflow:hidden;
+      position: relative;
+      height: clamp(300px, 42vh, 500px);
+      overflow: hidden;
     }
 
-    .entrevista-card--blue   .entrevista-card__thumb { background:linear-gradient(145deg,#020d22 0%,#093568 55%,#1A73C8 100%); }
-    .entrevista-card--yellow .entrevista-card__thumb { background:linear-gradient(145deg,#100800 0%,#523500 55%,#b88a00 100%); }
-    .entrevista-card--red    .entrevista-card__thumb { background:linear-gradient(145deg,#110303 0%,#540c0c 55%,#a82020 100%); }
-    .entrevista-card--green  .entrevista-card__thumb { background:linear-gradient(145deg,#020b04 0%,#0d3814 55%,#2a8040 100%); }
+    /* Gradient fallback shown while video first-frame loads */
+    .entrevista-card--blue   .entrevista-card__thumb { background: linear-gradient(145deg,#020d22 0%,#093568 55%,#1A73C8 100%); }
+    .entrevista-card--yellow .entrevista-card__thumb { background: linear-gradient(145deg,#100800 0%,#523500 55%,#b88a00 100%); }
+    .entrevista-card--red    .entrevista-card__thumb { background: linear-gradient(145deg,#110303 0%,#540c0c 55%,#a82020 100%); }
+    .entrevista-card--green  .entrevista-card__thumb { background: linear-gradient(145deg,#020b04 0%,#0d3814 55%,#2a8040 100%); }
 
-    .entrevista-card__play {
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      opacity:0;
-      transition:opacity .3s ease;
-    }
-
-    .entrevista-card:hover .entrevista-card__play { opacity:1; }
-
-    .entrevista-card__play-inner {
-      width:52px;height:52px;
-      border-radius:50%;
-      background:rgba(255,255,255,0.12);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-      border:1.5px solid rgba(255,255,255,0.22);
-      display:grid;
-      place-items:center;
-    }
-
-    .entrevista-card__play-inner svg {
-      width:18px;height:18px;
-      fill:#fff;
-      margin-left:3px;
-    }
-
-    .entrevista-card__duration {
-      position:absolute;
-      bottom:9px;right:9px;
-      font-size:0.58rem;
-      font-weight:700;
-      letter-spacing:0.06em;
-      color:rgba(255,255,255,0.88);
-      background:rgba(0,0,0,0.58);
-      padding:3px 8px;
-      border-radius:5px;
-      backdrop-filter:blur(4px);
-    }
-
-    .entrevista-card__info {
-      padding:0.95rem 1.15rem 1.2rem;
-    }
+    .entrevista-card__info { padding: 0.95rem 1.15rem 1.2rem; }
 
     .entrevista-card__name {
-      font-family:var(--font-display);
-      font-size:0.92rem;
-      font-weight:700;
-      color:#D8E8FC;
-      margin-bottom:0.22rem;
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #D8E8FC;
+      margin-bottom: 0.22rem;
     }
 
     .entrevista-card__role {
-      font-size:0.66rem;
-      font-weight:600;
-      letter-spacing:0.1em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,0.28);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
     }
 
-    /* ── Video inside card ── */
+    /* ── Video + overlay controls ── */
     .ecard-video {
       position: absolute;
       inset: 0;
@@ -1433,20 +1365,40 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      background: rgba(0, 0, 0, 0.28);
-      transition: opacity 0.35s ease, background 0.25s ease;
+      z-index: 2;
+      transition: opacity 0.4s ease;
     }
 
-    .ecard-overlay:hover { background: rgba(0, 0, 0, 0.10); }
+    /* Paused: show ▶, hide ⏸ */
+    .ecard-btn--play  { display: flex; }
+    .ecard-btn--pause { display: none; }
 
-    .ecard-overlay.is-hidden {
-      opacity: 0;
+    /* Playing: swap buttons — overlay opacity is managed by JS */
+    .entrevista-card.is-playing .ecard-btn--play  { display: none; }
+    .entrevista-card.is-playing .ecard-btn--pause { display: flex; }
+
+    .ecard-btn--play,
+    .ecard-btn--pause {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.42);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255,255,255,0.28);
+      color: #fff;
+      font-size: 1.35rem;
+      align-items: center;
+      justify-content: center;
       pointer-events: none;
+      line-height: 1;
     }
 
-    @media (max-width:768px) { .entrevistas__grid { grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:480px) { .entrevistas__grid { grid-template-columns:1fr; } }
+    .ecard-btn--play  { padding-left: 4px; }
+
+    @media (max-width: 768px) {
+      .entrevistas__grid { grid-template-columns: 1fr; }
+      .entrevista-card__thumb { height: clamp(280px, 55vh, 500px); }
+    }
 
 
     /* ══════════════════════════════════════════════════════════
@@ -1615,7 +1567,7 @@
       position:absolute;
       top:0;left:0;right:0;
       height:clamp(80px,12vh,130px);
-      background:linear-gradient(to bottom,#0D1B2A,transparent);
+      background:none;
       pointer-events:none;
       z-index:2;
     }
@@ -1828,9 +1780,8 @@
         padding: 0 1.25rem;
       }
 
-      /* Center column (nav links) hidden on mobile — hamburger takes over */
       .navbar__links {
-        grid-column: unset;
+        z-index: 999;            /* below navbar (1000) but above all content */
       }
 
       /* Ensure hamburger is visible and tappable */
@@ -1841,7 +1792,34 @@
         align-items: center;
         justify-content: center;
       }
+
+      /* ✕ close button — only visible on mobile */
+      .nav-close-li {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.5rem 1.25rem 0;
+      }
+
+      .nav-close-btn {
+        background: none;
+        border: none;
+        color: rgba(255,255,255,0.6);
+        font-size: 1.25rem;
+        cursor: pointer;
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: color 0.2s ease;
+      }
+
+      .nav-close-btn:hover { color: #fff; }
     }
+
+    /* Hide close button on desktop */
+    .nav-close-li { display: none; }
 
     /* ══════════════════════════════════════
        HERO
@@ -1854,37 +1832,42 @@
         min-height: auto !important;
       }
 
-      /* Outer column — establish height */
+      /* Outer column */
       .hero__img-col {
         display: block !important;
         width: 100% !important;
-        height: 50vh !important;
-        min-height: 300px !important;
+        height: 40vh !important;
+        min-height: 250px !important;
         order: -1;
         flex-shrink: 0;
         position: relative;
         align-self: auto !important;
       }
 
-      /* Frame — fill the column, no margins or rounding */
+      /* Frame — fill the column (explicit height breaks overflow:hidden collapse) */
       .hero__img-frame {
         width: 100% !important;
-        height: 100% !important;
+        height: 40vh !important;
+        min-height: 250px !important;
         margin: 0 !important;
         border-radius: 0 !important;
         flex: unset !important;
+        overflow: visible !important;
       }
 
-      /* Panel — the actual background-image, force all values */
+      /* Hide background-image div on mobile — use <img> instead */
       .hero__img-panel {
+        display: none !important;
+      }
+
+      /* Mobile <img> fallback — guaranteed to render on all browsers */
+      .hero__img-mobile {
         display: block !important;
         width: 100% !important;
-        height: 100% !important;
-        background-image: url('familia.png') !important;
-        background-size: cover !important;
-        background-position: center top !important;
-        mask-image: none !important;
-        -webkit-mask-image: none !important;
+        height: 40vh !important;
+        min-height: 250px !important;
+        object-fit: cover !important;
+        object-position: center 20% !important;
       }
 
       /* Hide glow — not needed on mobile */
@@ -1910,6 +1893,62 @@
       .hero__scroll { display: none !important; }
       .hero-icons .hi-bg1,
       .hero-icons .hi-bg2 { display: none !important; }
+
+      /* Constrain icons to image zone — keep z-index above image but below text */
+      .hero-icons {
+        height: 40vh !important;
+        min-height: 250px !important;
+        z-index: 2 !important;
+      }
+      .hero-icons .hi {
+        z-index: 2 !important;
+        pointer-events: none;
+      }
+
+      /* Mobile puzzle icons over photo */
+      .hero__photo-icon {
+        display: block !important;
+        position: absolute;
+        pointer-events: none;
+        z-index: 5;
+        user-select: none;
+        opacity: 0.75;
+      }
+      .hpi-1 {
+        width: 55px;
+        top: 10px;
+        right: 10px;
+        animation: hi-c 7.0s ease-in-out infinite;
+        animation-delay: -1.5s;
+      }
+      .hpi-2 {
+        width: 45px;
+        top: 30px;
+        left: 15px;
+        animation: hi-b 9.5s ease-in-out infinite;
+        animation-delay: -3.0s;
+      }
+      .hpi-3 {
+        width: 50px;
+        bottom: 20px;
+        right: 20px;
+        animation: hi-e 6.5s ease-in-out infinite;
+        animation-delay: -5.0s;
+      }
+
+      /* Gradient fade at bottom of hero image — blends into dark bg */
+      .hero__img-col::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(to bottom, transparent, #0D1B2A);
+        z-index: 3;
+        pointer-events: none;
+      }
+
     }
 
     @media (max-width: 480px) {
@@ -1953,32 +1992,24 @@
       .entrevistas__inner { padding: 0 1.25rem; }
 
       .entrevistas__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem;
       }
 
-      /* Ensure each card and its video fill correctly */
       .entrevista-card {
-        width: 100%;
-        display: block;
+        width: 100% !important;
+        display: block !important;
+      }
+
+      .entrevista-card__thumb {
+        height: clamp(280px, 55vh, 500px) !important;
       }
 
       .ecard-video {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
       }
-
-      /* Thumbnail placeholder gradient always visible until video loads */
-      .entrevista-card__thumb {
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .entrevistas__grid { grid-template-columns: 1fr; }
     }
 
     /* ══════════════════════════════════════
@@ -2022,561 +2053,1930 @@
 <body>
 
 <style>
-  /* ── Hero puzzle icons — 5 depth layers, NO color filters ── */
-  @keyframes hi-a { 0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-20px) rotate(7deg)} }
-  @keyframes hi-b { 0%,100%{transform:translateY(0) rotate(8deg)} 50%{transform:translateY(-16px) rotate(-7deg)} }
-  @keyframes hi-c { 0%,100%{transform:translateY(0) rotate(-11deg)} 50%{transform:translateY(-26px) rotate(4deg)} }
-  @keyframes hi-d { 0%,100%{transform:translateY(0) rotate(4deg)} 50%{transform:translateY(-14px) rotate(-10deg)} }
-  @keyframes hi-e { 0%,100%{transform:translateY(0) rotate(-3deg)} 50%{transform:translateY(-22px) rotate(8deg)} }
+  /* ── Hero: full-viewport photo + dark overlay ── */
+  .hero-new {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('familia.png');
+    background-size: cover;
+    background-position: center top;
+  }
 
-  /* 2 large blurred — far background */
-  .hi-bg1 { width:160px; top:2%;    left:-2%;   opacity:.25; filter:blur(6px); animation:hi-a 9.0s ease-in-out infinite; animation-delay:-1.0s; }
-  .hi-bg2 { width:160px; bottom:2%; right:-2%;  opacity:.25; filter:blur(6px); animation:hi-d 11.0s ease-in-out infinite; animation-delay:-6.0s; }
+  .hero-new__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 27, 42, 0.5);
+    z-index: 1;
+  }
 
-  /* 2 medium sharp — midground */
-  .hi-md1 { width:80px; top:6%;    right:5%;   opacity:.6; animation:hi-c 7.5s ease-in-out infinite; animation-delay:-2.5s; }
-  .hi-md2 { width:80px; bottom:8%; left:4%;    opacity:.6; animation:hi-b 8.5s ease-in-out infinite; animation-delay:-4.0s; }
+  /* 6 floating puzzle icons */
+  .hero-new__icons {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+  }
 
-  /* 1 small sharp — foreground */
-  .hi-fg1 { width:50px; top:50%;   left:1%;    opacity:.9; animation:hi-e 6.0s ease-in-out infinite; animation-delay:-3.0s; }
+  .hni { position: absolute; user-select: none; }
+
+  @keyframes hni-a { 0%,100%{transform:translateY(0) rotate(-6deg)} 50%{transform:translateY(-18px) rotate(8deg)} }
+  @keyframes hni-b { 0%,100%{transform:translateY(0) rotate(10deg)} 50%{transform:translateY(-22px) rotate(-8deg)} }
+  @keyframes hni-c { 0%,100%{transform:translateY(0) rotate(-14deg)} 50%{transform:translateY(-14px) rotate(6deg)} }
+  @keyframes hni-d { 0%,100%{transform:translateY(0) rotate(5deg)} 50%{transform:translateY(-20px) rotate(-12deg)} }
+  @keyframes hni-e { 0%,100%{transform:translateY(0) rotate(-8deg)} 50%{transform:translateY(-16px) rotate(10deg)} }
+  @keyframes hni-f { 0%,100%{transform:translateY(0) rotate(12deg)} 50%{transform:translateY(-24px) rotate(-6deg)} }
+
+  .hni-1 { width:55px;  top:8%;      left:3%;    animation:hni-a 7.2s ease-in-out infinite -1.0s;  filter:drop-shadow(0 0 10px #3A8FD4) drop-shadow(0 0 22px #3A8FD4); }
+  .hni-2 { width:40px;  top:15%;     right:6%;   animation:hni-b 5.8s ease-in-out infinite -2.5s;  filter:drop-shadow(0 0 10px #F0B429) drop-shadow(0 0 22px #F0B429); }
+  .hni-3 { width:80px;  top:4%;      left:72%;   animation:hni-c 8.5s ease-in-out infinite -4.0s;  filter:drop-shadow(0 0 10px #D63B3B) drop-shadow(0 0 22px #D63B3B); }
+  .hni-4 { width:65px;  top:55%;     left:5%;    animation:hni-d 6.5s ease-in-out infinite -3.2s;  filter:drop-shadow(0 0 10px #6CB33F) drop-shadow(0 0 22px #6CB33F); }
+  .hni-5 { width:90px;  bottom:12%;  right:4%;   animation:hni-e 9.0s ease-in-out infinite -5.5s;  filter:drop-shadow(0 0 10px #3A8FD4) drop-shadow(0 0 22px #3A8FD4); }
+  .hni-6 { width:48px;  bottom:20%;  left:28%;   animation:hni-f 6.8s ease-in-out infinite -1.8s;  filter:drop-shadow(0 0 10px #F0B429) drop-shadow(0 0 22px #F0B429); }
+
+  /* Center content */
+  .hero-new__content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.1rem;
+    padding: 2rem;
+  }
+
+  /* Hero center puzzle icon */
+  .hero-new__puzzle-icon {
+    width: 180px;
+    height: 180px;
+    display: block;
+    margin-bottom: 0.3rem;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+  }
+
+  /* Badge pill */
+  .hero-new__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 22px;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    border-radius: 100px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Title */
+  .hero-new__title {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(3.2rem, 9vw, 5.8rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .hero-new__title-white  { color: #ffffff; display: block; }
+  .hero-new__title-yellow { color: #F0B429; display: block; }
+
+  /* Subtitle */
+  .hero-new__subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.65;
+    max-width: 480px;
+    margin: 0;
+  }
+
+  /* Bottom 4-color stripe */
+  .hero-new__stripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    display: flex;
+    z-index: 4;
+  }
+  .hero-new__stripe-seg               { flex: 1; }
+  .hero-new__stripe-seg:nth-child(1)  { background: #3A8FD4; }
+  .hero-new__stripe-seg:nth-child(2)  { background: #F0B429; }
+  .hero-new__stripe-seg:nth-child(3)  { background: #D63B3B; }
+  .hero-new__stripe-seg:nth-child(4)  { background: #6CB33F; }
 </style>
-
-
-<!-- ════════════════════════════════════════════════════════════
-     NAVBAR
-     ════════════════════════════════════════════════════════════ -->
-<header class="navbar" role="banner">
-  <div class="navbar__inner">
-
-    <a href="#inicio" class="navbar__logo">
-      <span class="navbar__logo-icon">🧩</span>
-      Clínica Espaço Saúde
-    </a>
-
-    <nav aria-label="Menu principal">
-      <ul class="navbar__links" id="nav-links">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#videos">Vídeos</a></li>
-        <li><a href="#entrevistas">Entrevistas</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-      </ul>
-    </nav>
-
-    <button class="navbar__toggle" id="nav-burger" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-  </div>
-</header>
 
 
 <!-- ════════════════════════════════════════════════════════════
      HERO
      ════════════════════════════════════════════════════════════ -->
-<section class="hero" id="inicio">
+<section class="hero-new" id="inicio">
 
-  <!-- Discrete star atmosphere -->
-  <div class="hero__stars" aria-hidden="true"></div>
+  <!-- Dark overlay rgba(13,27,42,0.5) -->
+  <div class="hero-new__overlay" aria-hidden="true"></div>
 
-  <!-- Puzzle icons — 5 depth layers, NO color filters -->
-  <div class="hero-icons" aria-hidden="true">
-    <img src="Icons/puzzle-icon.png" alt="" class="hi hi-bg1" data-speed="0.15">
-    <img src="Icons/puzzle-icon.png" alt="" class="hi hi-bg2" data-speed="0.10">
-    <img src="Icons/puzzle-icon.png" alt="" class="hi hi-md1" data-speed="0.30">
-    <img src="Icons/puzzle-icon.png" alt="" class="hi hi-md2" data-speed="0.25">
-    <img src="Icons/puzzle-icon.png" alt="" class="hi hi-fg1" data-speed="0.40">
+  <!-- 6 floating puzzle icons — glow in TEA colors, no CSS color filters on image itself -->
+  <div class="hero-new__icons" aria-hidden="true">
+    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-1">
+    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-2">
+    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-3">
+    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-4">
+    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-5">
+    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-6">
   </div>
 
-  <div class="hero__inner">
+  <!-- Center content -->
+  <div class="hero-new__content">
 
-    <!-- Left: text -->
-    <div class="hero__text">
+    <!-- Puzzle icon — raw image, depth shadow only, no filters on the image -->
+    <img src="Icons/puzzle-icon.png" alt="" class="hero-new__puzzle-icon">
 
-      <div class="hero__badge" id="hero-badge">
-        ❤️ EVENTO INCLUSIVO · TEA
-      </div>
+    <!-- Badge pill -->
+    <div class="hero-new__badge">Autismo na Prática · Maio 2025</div>
 
-      <h1 class="hero__title" id="hero-title">
-        <span class="ht-1">Nosso</span>
-        <span class="ht-2">Evento</span>
-        <span class="ht-3">Especial</span>
-      </h1>
+    <!-- Title: "Autismo" white + "na Prática" yellow -->
+    <h1 class="hero-new__title">
+      <span class="hero-new__title-white">Autismo</span>
+      <span class="hero-new__title-yellow">na Prática</span>
+    </h1>
 
-      <p class="hero__sub" id="hero-sub">
-        Um dia inesquecível dedicado às famílias e profissionais
-        do universo TEA. Reviva cada momento através de entrevistas
-        e fotografias que capturam a emoção deste encontro único.
-      </p>
-
-    </div>
-
-    <!-- Right: image column with glow + rounded frame -->
-    <div class="hero__img-col" aria-hidden="true">
-      <div class="hero__img-glow"></div>
-      <div class="hero__img-frame">
-        <div class="hero__img-panel"></div>
-      </div>
-    </div>
+    <!-- Subtitle -->
+    <p class="hero-new__subtitle">Como apoiar no dia a dia com orientação de especialistas</p>
 
   </div>
 
-  <div class="hero__scroll" aria-hidden="true">
-    <div class="hero__scroll-line"></div>
-    <span class="hero__scroll-label">Scroll</span>
+  <!-- Bottom 4-color horizontal stripe: blue | yellow | red | green -->
+  <div class="hero-new__stripe" aria-hidden="true">
+    <div class="hero-new__stripe-seg"></div>
+    <div class="hero-new__stripe-seg"></div>
+    <div class="hero-new__stripe-seg"></div>
+    <div class="hero-new__stripe-seg"></div>
   </div>
 
 </section>
 
 
 <!-- ════════════════════════════════════════════════════════════
-     VÍDEOS
+     SOBRE O EVENTO
      ════════════════════════════════════════════════════════════ -->
-<section id="videos">
-  <div class="videos__inner">
+<style>
+  #sobre {
+    position: relative;
+    background: #ffffff;
+    padding: clamp(4rem, 8vh, 6rem) clamp(1.5rem, 5vw, 5rem);
+  }
 
-    <div class="videos__header">
-      <p class="sec-eyebrow">✨ Melhores Momentos</p>
-      <h2 class="sec-title" id="videos-title">O Dia em Imagens</h2>
-      <p class="sec-sub">Uma seleção dos momentos mais marcantes do nosso evento especial.</p>
+  .sobre__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  /* Left column */
+  .sobre__left { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .sobre__title {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .sobre__text {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    color: #4a5568;
+    line-height: 1.8;
+    margin: 0;
+    max-width: 440px;
+  }
+
+  /* Right column — 2×2 metric grid */
+  .sobre__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .sobre__card {
+    border-radius: 12px;
+    padding: 1.4rem 1.2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.3rem;
+    color: #fff;
+    opacity: 0;
+  }
+
+  .sobre__card--blue   { background: #3A8FD4; }
+  .sobre__card--yellow { background: #F0B429; }
+  .sobre__card--red    { background: #D63B3B; }
+  .sobre__card--green  { background: #6CB33F; }
+
+  .sobre__card-number {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+  }
+
+  .sobre__card-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.88);
+  }
+
+  .sobre__card-icon {
+    font-size: 1.2rem;
+    margin-top: 0.25rem;
+    line-height: 1;
+  }
+
+  /* Bottom 4-color stripe */
+  .sobre__stripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    display: flex;
+  }
+  .sobre__stripe-seg              { flex: 1; }
+  .sobre__stripe-seg:nth-child(1) { background: #3A8FD4; }
+  .sobre__stripe-seg:nth-child(2) { background: #F0B429; }
+  .sobre__stripe-seg:nth-child(3) { background: #D63B3B; }
+  .sobre__stripe-seg:nth-child(4) { background: #6CB33F; }
+
+  @media (max-width: 768px) {
+    .sobre__inner { grid-template-columns: 1fr; }
+    .sobre__text  { max-width: 100%; }
+    .sobre__grid  { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section id="sobre">
+
+  <div class="sobre__inner">
+
+    <!-- Left: text -->
+    <div class="sobre__left" id="sobre-left">
+      <h2 class="sobre__title">Sobre o evento</h2>
+      <p class="sobre__text">
+        Uma manhã dedicada à informação, acolhimento e troca de experiências
+        sobre o Transtorno do Espectro Autista. Juntos, podemos construir um
+        mundo mais inclusivo para todos.
+      </p>
     </div>
 
-    <div class="videos__player-wrap" id="vid-player">
-      <video id="hero-video" src="v%C3%ADdeo%20b-roll.mp4" autoplay muted loop playsinline preload="auto"></video>
-      <button class="vid-sound-btn" id="vid-sound-btn" aria-label="Ativar som">🔇</button>
-      <button class="vid-fallback-btn" id="vid-play-btn" aria-label="Reproduzir vídeo">
-        <span class="vid-fallback-btn__icon" id="vid-play-icon">▶</span>
-      </button>
-    </div>
+    <!-- Right: metric cards 2×2 -->
+    <div class="sobre__grid" id="sobre-grid">
 
-    <div class="videos__meta">
-      <span class="videos__meta-item">
-        <span class="videos__meta-dot"></span>
-        Evento Especial
-      </span>
-      <span class="videos__meta-item">
-        <span class="videos__meta-dot"></span>
-        Clínica Espaço Saúde
-      </span>
-      <span class="videos__meta-item">
-        <span class="videos__meta-dot"></span>
-        TEA
-      </span>
+      <div class="sobre__card sobre__card--blue">
+        <div class="sobre__card-number">4</div>
+        <div class="sobre__card-label">Palestrantes</div>
+        <div class="sobre__card-icon">👤</div>
+      </div>
+
+      <div class="sobre__card sobre__card--yellow">
+        <div class="sobre__card-number">4h</div>
+        <div class="sobre__card-label">de Evento</div>
+        <div class="sobre__card-icon">🕐</div>
+      </div>
+
+      <div class="sobre__card sobre__card--green">
+        <div class="sobre__card-number">TEA</div>
+        <div class="sobre__card-label">em Foco</div>
+        <div class="sobre__card-icon">🧩</div>
+      </div>
+
     </div>
 
   </div>
+
+  <!-- Bottom 4-color stripe -->
+  <div class="sobre__stripe" aria-hidden="true">
+    <div class="sobre__stripe-seg"></div>
+    <div class="sobre__stripe-seg"></div>
+    <div class="sobre__stripe-seg"></div>
+    <div class="sobre__stripe-seg"></div>
+  </div>
+
 </section>
+
+<script>
+  (function () {
+    function initSobre() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from('#sobre-left', {
+        x: -60, opacity: 0, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: '#sobre', start: 'top 75%' }
+      });
+
+      gsap.from('#sobre-grid', {
+        x: 60, opacity: 0, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: '#sobre', start: 'top 75%' }
+      });
+
+      gsap.to('.sobre__card', {
+        y: 0, opacity: 1, duration: 0.6, ease: 'power2.out',
+        stagger: 0.15,
+        scrollTrigger: { trigger: '#sobre-grid', start: 'top 78%' }
+      });
+    }
+
+    /* GSAP loads with defer — wait for it */
+    if (document.readyState === 'complete') {
+      initSobre();
+    } else {
+      window.addEventListener('load', initSobre);
+    }
+  }());
+</script>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PALESTRANTES
+     ════════════════════════════════════════════════════════════ -->
+<style>
+  #palestrantes {
+    position: relative;
+    background: #ffffff;
+    padding: clamp(4rem, 8vh, 6rem) clamp(1.5rem, 5vw, 5rem) calc(clamp(4rem, 8vh, 6rem) + 5px);
+  }
+
+  .palestrantes__inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .palestrantes__heading {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    text-align: center;
+    margin: 0 0 clamp(2rem, 4vh, 3rem);
+  }
+
+  .palestrantes__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  /* Speaker card */
+  .pcard {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-left-width: 4px;
+    border-left-style: solid;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.4rem;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  .pcard--blue   { border-left-color: #3A8FD4; }
+  .pcard--yellow { border-left-color: #F0B429; }
+  .pcard--green  { border-left-color: #6CB33F; }
+  .pcard--red    { border-left-color: #D63B3B; }
+
+  /* Circle photo placeholder */
+  .pcard__photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  /* Info block */
+  .pcard__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .pcard__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .pcard__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #fff;
+  }
+
+  .pcard--blue   .pcard__badge { background: #3A8FD4; }
+  .pcard--yellow .pcard__badge { background: #F0B429; }
+  .pcard--green  .pcard__badge { background: #6CB33F; }
+  .pcard--red    .pcard__badge { background: #D63B3B; }
+
+  .pcard__name {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #0D1B2A;
+    line-height: 1.2;
+  }
+
+  .pcard__specialty {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .pcard--blue   .pcard__specialty { color: #3A8FD4; }
+  .pcard--yellow .pcard__specialty { color: #e0a000; }
+  .pcard--green  .pcard__specialty { color: #6CB33F; }
+  .pcard--red    .pcard__specialty { color: #D63B3B; }
+
+  .pcard__topic {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    color: #718096;
+    font-style: italic;
+    line-height: 1.5;
+    margin-top: 0.1rem;
+  }
+
+  /* Bottom 4-color stripe */
+  .palestrantes__stripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    display: flex;
+  }
+  .palestrantes__stripe-seg              { flex: 1; }
+  .palestrantes__stripe-seg:nth-child(1) { background: #3A8FD4; }
+  .palestrantes__stripe-seg:nth-child(2) { background: #F0B429; }
+  .palestrantes__stripe-seg:nth-child(3) { background: #D63B3B; }
+  .palestrantes__stripe-seg:nth-child(4) { background: #6CB33F; }
+
+  @media (max-width: 600px) {
+    .pcard { flex-direction: column; align-items: flex-start; }
+    .pcard__photo { width: 52px; height: 52px; }
+  }
+</style>
+
+<section id="palestrantes">
+  <div class="palestrantes__inner">
+
+    <h2 class="palestrantes__heading">Palestrantes</h2>
+
+    <div class="palestrantes__list" id="pcard-list">
+
+      <!-- Card 1 — blue -->
+      <article class="pcard pcard--blue">
+        <img src="profissionais/Monica.jpeg" alt="Dra. Mônica Scattolin" class="pcard__photo">
+        <div class="pcard__info">
+          <div class="pcard__name">Dra. Mônica Scattolin</div>
+          <div class="pcard__specialty">Neurologista Infantil</div>
+          <div class="pcard__topic">Compreendendo o TEA: desafios e caminhos</div>
+        </div>
+      </article>
+
+      <!-- Card 2 — yellow -->
+      <article class="pcard pcard--yellow">
+        <img src="profissionais/Keli.jpeg" alt="Keli Rodriguez" class="pcard__photo">
+        <div class="pcard__info">
+          <div class="pcard__name">Keli Rodriguez</div>
+          <div class="pcard__specialty">Psicóloga</div>
+          <div class="pcard__topic">Manejo comportamental de crianças com TEA</div>
+        </div>
+      </article>
+
+      <!-- Card 3 — green -->
+      <article class="pcard pcard--green">
+        <img src="profissionais/Patricia.jpeg" alt="Patrícia Medeiros Cardia" class="pcard__photo">
+        <div class="pcard__info">
+          <div class="pcard__name">Patrícia Medeiros Cardia</div>
+          <div class="pcard__specialty">Fonoaudióloga</div>
+          <div class="pcard__topic">Estimulação de linguagem em crianças com TEA</div>
+        </div>
+      </article>
+
+      <!-- Card 4 — red (no time badge) -->
+      <article class="pcard pcard--red">
+        <img src="profissionais/Andrea.jpeg" alt="Andrea Lungwitz Silva" class="pcard__photo">
+        <div class="pcard__info">
+          <div class="pcard__name">Andrea Lungwitz Silva</div>
+          <div class="pcard__specialty">Psicopedagoga</div>
+          <div class="pcard__topic">Aprendizagem e inclusão escolar</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- Bottom 4-color stripe -->
+  <div class="palestrantes__stripe" aria-hidden="true">
+    <div class="palestrantes__stripe-seg"></div>
+    <div class="palestrantes__stripe-seg"></div>
+    <div class="palestrantes__stripe-seg"></div>
+    <div class="palestrantes__stripe-seg"></div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    function initPalestrantes() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to('.pcard', {
+        y: 0, opacity: 1, duration: 0.7, ease: 'power3.out',
+        stagger: 0.2,
+        scrollTrigger: { trigger: '#palestrantes', start: 'top 78%' }
+      });
+    }
+
+    if (document.readyState === 'complete') {
+      initPalestrantes();
+    } else {
+      window.addEventListener('load', initPalestrantes);
+    }
+  }());
+</script>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     MELHORES MOMENTOS
+     ════════════════════════════════════════════════════════════ -->
+<style>
+  #melhores-momentos {
+    position: relative;
+    background: #1a5fa0;
+    padding: clamp(4rem, 8vh, 6rem) clamp(1.5rem, 5vw, 5rem) calc(clamp(4rem, 8vh, 6rem) + 5px);
+    overflow: hidden;
+  }
+
+  /* subtle radial glow behind content */
+  #melhores-momentos::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(58,143,212,0.25) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .mm__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  /* Left column */
+  .mm__text { display: flex; flex-direction: column; gap: 0.9rem; }
+
+  .mm__title {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .mm__subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Right column — video wrapper */
+  .mm__video-wrap {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    max-height: 70vh;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 3px solid #3A8FD4;
+    box-shadow: 0 0 30px rgba(58, 143, 212, 0.6);
+  }
+
+  .mm__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 13px;
+  }
+
+  /* Play/pause overlay */
+  .mm__play-btn {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transition: opacity 0.4s ease;
+  }
+
+  .mm__play-btn.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .mm__play-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(26, 95, 160, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 1;
+    transition: background 0.2s ease, transform 0.2s ease;
+    padding-left: 4px;
+  }
+
+  .mm__play-btn:hover .mm__play-icon {
+    background: rgba(58, 143, 212, 0.7);
+    transform: scale(1.08);
+  }
+
+  /* Sound toggle pill */
+  .mm__sound-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 100px;
+    padding: 6px 13px;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .mm__sound-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: scale(1.06);
+  }
+
+  /* Bottom 4-color stripe */
+  .mm__stripe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    display: flex;
+  }
+  .mm__stripe-seg              { flex: 1; }
+  .mm__stripe-seg:nth-child(1) { background: #3A8FD4; }
+  .mm__stripe-seg:nth-child(2) { background: #F0B429; }
+  .mm__stripe-seg:nth-child(3) { background: #D63B3B; }
+  .mm__stripe-seg:nth-child(4) { background: #6CB33F; }
+
+  @media (max-width: 768px) {
+    .mm__inner {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+    .mm__text { text-align: center; align-items: center; }
+  }
+</style>
+
+<section id="melhores-momentos">
+  <div class="mm__inner">
+
+    <!-- Left: text -->
+    <div class="mm__text" id="mm-text">
+      <h2 class="mm__title">Melhores momentos</h2>
+    </div>
+
+    <!-- Right: video -->
+    <div class="mm__video-wrap" id="mm-video-wrap">
+      <video
+        class="mm__video"
+        id="mm-video"
+        src="vídeo b-roll.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      ></video>
+
+      <!-- Play/pause overlay -->
+      <button class="mm__play-btn" id="mm-play-btn" aria-label="Reproduzir vídeo">
+        <span class="mm__play-icon" id="mm-play-icon">▶</span>
+      </button>
+
+      <!-- Sound toggle -->
+      <button class="mm__sound-btn" id="mm-sound-btn" aria-label="Ativar som">🔇</button>
+    </div>
+
+  </div>
+
+  <!-- Bottom 4-color stripe -->
+  <div class="mm__stripe" aria-hidden="true">
+    <div class="mm__stripe-seg"></div>
+    <div class="mm__stripe-seg"></div>
+    <div class="mm__stripe-seg"></div>
+    <div class="mm__stripe-seg"></div>
+  </div>
+</section>
+
+<script>
+  /* Melhores momentos — video controls */
+  (function () {
+    var vid      = document.getElementById('mm-video');
+    var playBtn  = document.getElementById('mm-play-btn');
+    var playIcon = document.getElementById('mm-play-icon');
+    var soundBtn = document.getElementById('mm-sound-btn');
+    var wrap     = document.getElementById('mm-video-wrap');
+    if (!vid || !playBtn || !soundBtn) return;
+
+    var hideTimer = null;
+
+    function syncIcon() {
+      playIcon.textContent = vid.paused ? '▶' : '⏸';
+      playBtn.setAttribute('aria-label', vid.paused ? 'Reproduzir' : 'Pausar');
+    }
+
+    function showPlay() {
+      clearTimeout(hideTimer);
+      playBtn.classList.remove('fade-out');
+    }
+
+    function schedFade(ms) {
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () {
+        if (!vid.paused) playBtn.classList.add('fade-out');
+      }, ms);
+    }
+
+    playBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      vid.paused ? vid.play() : vid.pause();
+    });
+
+    wrap.addEventListener('click', function () {
+      syncIcon(); showPlay(); schedFade(2000);
+    });
+
+    vid.addEventListener('play',    syncIcon);
+    vid.addEventListener('pause',   function () { syncIcon(); showPlay(); });
+    vid.addEventListener('playing', function () { syncIcon(); schedFade(2000); });
+
+    /* Autoplay attempt */
+    var p = vid.play();
+    if (p !== undefined) p.catch(function () { syncIcon(); showPlay(); });
+
+    /* Sound toggle */
+    soundBtn.addEventListener('click', function () {
+      vid.muted = !vid.muted;
+      soundBtn.textContent = vid.muted ? '🔇' : '🔊';
+      soundBtn.setAttribute('aria-label', vid.muted ? 'Ativar som' : 'Silenciar');
+    });
+  }());
+
+  /* GSAP ScrollTrigger animations */
+  (function () {
+    function initMM() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from('#mm-text', {
+        x: -50, opacity: 0, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: '#melhores-momentos', start: 'top 75%' }
+      });
+
+      gsap.from('#mm-video-wrap', {
+        x: 50, opacity: 0, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: '#melhores-momentos', start: 'top 75%' }
+      });
+    }
+
+    if (document.readyState === 'complete') {
+      initMM();
+    } else {
+      window.addEventListener('load', initMM);
+    }
+  }());
+</script>
 
 
 <!-- ════════════════════════════════════════════════════════════
      ENTREVISTAS
      ════════════════════════════════════════════════════════════ -->
+<style>
+  #entrevistas {
+    position: relative;
+    background: #ffffff !important;
+    padding: clamp(4rem,8vh,6rem) clamp(1.5rem,5vw,5rem) calc(clamp(4rem,8vh,6rem) + 5px) !important;
+    height: auto !important;
+  }
+
+  .ent__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .ent__heading {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    text-align: center;
+    margin: 0 0 clamp(2rem, 4vh, 3rem);
+  }
+
+  /* Grid: 2 colunas, cards story 9:16 */
+  .ent__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+    max-width: 660px;
+    margin: 0 auto;
+  }
+
+  /* Card base — story 9:16 */
+  .ec {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 9 / 16;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .ec--blue   { background: #3A8FD4; }
+  .ec--yellow { background: #F0B429; }
+  .ec--green  { background: #6CB33F; }
+  .ec--red    { background: #D63B3B; }
+
+  /* Video — fills card */
+  .ec__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* Overlay: fades when playing */
+  .ec__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    transition: opacity 0.35s ease;
+  }
+
+  .ec.is-playing .ec__overlay { opacity: 0; pointer-events: none; }
+
+  /* Speaker photo — covers full card behind overlay */
+  .ec__photo-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+
+  .ec__speaker-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  /* Dark gradient from bottom — makes name legible */
+  .ec__photo-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.25) 45%, transparent 100%);
+  }
+
+  /* Circular play button — centered */
+  .ec__play-btn {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.3rem;
+    padding-left: 3px;
+    transition: background 0.2s, transform 0.2s;
+    pointer-events: none;
+  }
+
+  .ec:hover .ec__play-btn {
+    background: rgba(0, 0, 0, 0.55);
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  /* Speaker name — bottom center */
+  .ec__name {
+    position: absolute;
+    bottom: 1.1rem;
+    left: 0.8rem;
+    right: 0.8rem;
+    font-family: 'Baloo 2', cursive;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 1.3;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  }
+
+  /* Badge "Assistir no YouTube" — cards que abrem nova aba */
+  .ec__yt-badge {
+    position: absolute;
+    left: 50%;
+    top: 63%;
+    transform: translateX(-50%);
+    background: rgba(200, 0, 0, 0.82);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* iFrame embed — preenche o card */
+  .ec__iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 1;
+  }
+
+  /* Stripe */
+  .ent__stripe {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    display: flex;
+  }
+  .ent__stripe-seg              { flex: 1; }
+  .ent__stripe-seg:nth-child(1) { background: #3A8FD4; }
+  .ent__stripe-seg:nth-child(2) { background: #F0B429; }
+  .ent__stripe-seg:nth-child(3) { background: #D63B3B; }
+  .ent__stripe-seg:nth-child(4) { background: #6CB33F; }
+
+  @media (max-width: 600px) {
+    .ent__grid {
+      grid-template-columns: 1fr;
+      max-width: 340px;
+    }
+  }
+</style>
+
 <section id="entrevistas">
-  <div class="entrevistas__inner">
+  <div class="ent__inner">
 
-    <div class="entrevistas__header">
-      <p class="sec-eyebrow">Depoimentos</p>
-      <h2 class="sec-title" id="entrevistas-title">Entrevistas</h2>
-      <p class="sec-sub">Profissionais e famílias que participaram do evento compartilham suas impressões.</p>
-    </div>
+    <h2 class="ent__heading">Entrevistas</h2>
 
-    <div class="entrevistas__grid" id="ecard-grid">
+    <div class="ent__grid" id="ent-grid">
+
+      <!-- Mônica — blue -->
+      <article class="ec ec--blue">
+        <iframe
+          src="https://www.youtube.com/embed/8JG5_sDqaDs"
+          title="YouTube Shorts"
+          width="315" height="560"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </article>
+
+      <!-- Keli  -->
+      <article class="ec ec--yellow">
+      <iframe 
+        width="315" height="560"
+        src="https://www.youtube.com/embed/PTBNqRLBYAA"
+        title="YouTube Shorts"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+        </iframe>
+      </article>
 
       <!-- Andrea -->
-      <article class="entrevista-card entrevista-card--blue">
-        <div class="entrevista-card__thumb">
-          <video class="ecard-video" src="entrevistas/v%C3%ADdeo%20andrea%2001.mp4" preload="metadata" playsinline></video>
-          <div class="ecard-overlay" aria-label="Reproduzir entrevista de Andrea">
-            <div class="entrevista-card__play-inner">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="entrevista-card__info">
-          <div class="entrevista-card__name">Andrea</div>
-          <div class="entrevista-card__role">Entrevista</div>
-        </div>
+      <article class="ec ec--red">
+        <iframe
+          src="https://www.youtube.com/embed/ttv90ktFzco"
+          title="YouTube Shorts"
+          width="315" height="560"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </article>
 
-      <!-- Keli -->
-      <article class="entrevista-card entrevista-card--yellow">
-        <div class="entrevista-card__thumb">
-          <video class="ecard-video" src="entrevistas/v%C3%ADdeo%20keli.mp4" preload="metadata" playsinline></video>
-          <div class="ecard-overlay" aria-label="Reproduzir entrevista de Keli">
-            <div class="entrevista-card__play-inner">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="entrevista-card__info">
-          <div class="entrevista-card__name">Keli</div>
-          <div class="entrevista-card__role">Entrevista</div>
-        </div>
-      </article>
-
-      <!-- Mônica -->
-      <article class="entrevista-card entrevista-card--red">
-        <div class="entrevista-card__thumb">
-          <video class="ecard-video" src="entrevistas/v%C3%ADdeo%20m%C3%B4nica.mp4" preload="metadata" playsinline></video>
-          <div class="ecard-overlay" aria-label="Reproduzir entrevista de Mônica">
-            <div class="entrevista-card__play-inner">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="entrevista-card__info">
-          <div class="entrevista-card__name">Mônica</div>
-          <div class="entrevista-card__role">Entrevista</div>
-        </div>
-      </article>
-
-      <!-- Patrícia — Clave de Sol -->
-      <article class="entrevista-card entrevista-card--green">
-        <div class="entrevista-card__thumb">
-          <video class="ecard-video" src="entrevistas/v%C3%ADdeo%20patr%C3%ADcia%20(clave%20de%20sol).mp4" preload="metadata" playsinline></video>
-          <div class="ecard-overlay" aria-label="Reproduzir entrevista de Patrícia">
-            <div class="entrevista-card__play-inner">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="entrevista-card__info">
-          <div class="entrevista-card__name">Patrícia</div>
-          <div class="entrevista-card__role">Clave de Sol</div>
-        </div>
-      </article>
-
-      <!-- Patrícia — Espaço Saúde -->
-      <article class="entrevista-card entrevista-card--blue">
-        <div class="entrevista-card__thumb">
-          <video class="ecard-video" src="entrevistas/v%C3%ADdeo%20patr%C3%ADcia%20(espa%C3%A7o%20sa%C3%BAde)%2001.mp4" preload="metadata" playsinline></video>
-          <div class="ecard-overlay" aria-label="Reproduzir entrevista de Patrícia">
-            <div class="entrevista-card__play-inner">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-        <div class="entrevista-card__info">
-          <div class="entrevista-card__name">Patrícia</div>
-          <div class="entrevista-card__role">Espaço Saúde</div>
-        </div>
+      <!-- Patrícia — blue -->
+      <article class="ec ec--blue">
+        <iframe
+          src="https://www.youtube.com/embed/pj9WCrQIi9Q"
+          title="YouTube Shorts"
+          width="315" height="560"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </article>
 
     </div>
   </div>
+
+  <div class="ent__stripe" aria-hidden="true">
+    <div class="ent__stripe-seg"></div>
+    <div class="ent__stripe-seg"></div>
+    <div class="ent__stripe-seg"></div>
+    <div class="ent__stripe-seg"></div>
+  </div>
 </section>
+
+<script>
+  /* Entrevistas — play/pause with sound, mutual exclusion */
+  (function () {
+    var cards = Array.from(document.querySelectorAll('.ec'));
+
+    function stopAll(except) {
+      cards.forEach(function (c) {
+        if (c === except) return;
+        var v = c.querySelector('.ec__video');
+        var b = c.querySelector('.ec__play-btn');
+        if (v && !v.paused) v.pause();
+        c.classList.remove('is-playing');
+        if (b) b.textContent = '▶';
+      });
+    }
+
+    cards.forEach(function (card) {
+      var vid = card.querySelector('.ec__video');
+      var btn = card.querySelector('.ec__play-btn');
+      if (!vid || !btn) return;
+
+      /* Seek to first frame once metadata loads */
+      vid.addEventListener('loadedmetadata', function () { vid.currentTime = 0.1; });
+
+      card.addEventListener('click', function () {
+        if (vid.paused) {
+          stopAll(card);
+          vid.muted = false;
+          var p = vid.play();
+          if (p) p.catch(function () {});
+          card.classList.add('is-playing');
+          btn.textContent = '⏸';
+        } else {
+          vid.pause();
+          card.classList.remove('is-playing');
+          btn.textContent = '▶';
+        }
+      });
+
+      vid.addEventListener('ended', function () {
+        card.classList.remove('is-playing');
+        btn.textContent = '▶';
+      });
+    });
+
+    /* GSAP entrance */
+    function initEntrevistas() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to('.ec', {
+        opacity: 1, y: 0, duration: 0.65, ease: 'power3.out', stagger: 0.15,
+        scrollTrigger: { trigger: '#entrevistas', start: 'top 78%' }
+      });
+    }
+
+    if (document.readyState === 'complete') { initEntrevistas(); }
+    else { window.addEventListener('load', initEntrevistas); }
+  }());
+</script>
 
 
 <!-- ════════════════════════════════════════════════════════════
      GALERIA
      ════════════════════════════════════════════════════════════ -->
+<style>
+  #galeria {
+    position: relative;
+    background: #ffffff !important;
+    padding: clamp(4rem,8vh,6rem) clamp(1.5rem,4vw,4rem) calc(clamp(4rem,8vh,6rem) + 5px) !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .gal__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .gal__heading {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    text-align: center;
+    margin: 0 0 clamp(2rem, 4vh, 3rem);
+  }
+
+  .gal__masonry {
+    columns: 3;
+    column-gap: 8px;
+  }
+
+  /* Each item wrapper — holds img + download btn */
+  .gal__item {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 8px;
+    display: block;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .gal__img {
+    width: 100%;
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .gal__item:hover .gal__img { transform: scale(1.03); }
+
+  /* Per-item download button */
+  .gal__dl-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.62);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1.5px solid rgba(255,255,255,0.38);
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    z-index: 3;
+  }
+
+  .gal__item:hover .gal__dl-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gal__dl-btn:hover { background: rgba(58,143,212,0.85); }
+
+  /* Button row: Ver mais + Baixar todas */
+  .gal__btn-wrap {
+    text-align: center;
+    margin-top: clamp(2rem, 4vh, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .gal__btn {
+    display: inline-block;
+    padding: 12px 36px;
+    border: 2px solid #3A8FD4;
+    border-radius: 100px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #3A8FD4;
+    letter-spacing: 0.04em;
+    background: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+  }
+
+  .gal__btn:hover { background: #3A8FD4; color: #fff; }
+
+  .gal__btn--solid {
+    background: #0d1b3e;
+    border-color: #0d1b3e;
+    color: #fff;
+  }
+
+  .gal__btn--solid:hover { background: #1a2e5a; border-color: #1a2e5a; color: #fff; }
+
+  /* Stripe */
+  .gal__stripe {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    display: flex;
+  }
+  .gal__stripe-seg              { flex: 1; }
+  .gal__stripe-seg:nth-child(1) { background: #3A8FD4; }
+  .gal__stripe-seg:nth-child(2) { background: #F0B429; }
+  .gal__stripe-seg:nth-child(3) { background: #D63B3B; }
+  .gal__stripe-seg:nth-child(4) { background: #6CB33F; }
+
+  /* Hidden items */
+  .gal--hidden { display: none !important; }
+
+  @keyframes galReveal {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .gal--revealing .gal__img { animation: galReveal 0.5s ease forwards; }
+
+  .gal__btn:disabled {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  /* ── Lightbox ── */
+  #lb-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lb-overlay.lb-open { display: flex; }
+
+  #lb-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    display: block;
+    user-select: none;
+  }
+
+  .lb-btn {
+    position: fixed;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    z-index: 9001;
+  }
+
+  .lb-btn:hover { background: rgba(255,255,255,0.28); }
+
+  #lb-close {
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+  }
+
+  #lb-prev {
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+
+  #lb-next {
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+
+  #lb-counter {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em;
+    z-index: 9001;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) { .gal__masonry { columns: 2; } }
+  @media (max-width: 480px) { .gal__masonry { columns: 2; column-gap: 6px; } .gal__item { margin-bottom: 6px; } }
+  @media (max-width: 480px) { #lb-prev { left: 4px; } #lb-next { right: 4px; } }
+</style>
+
 <section id="galeria">
-  <div class="galeria__inner">
+  <div class="gal__inner">
 
-    <div class="galeria__header">
-      <p class="sec-eyebrow">Galeria</p>
-      <h2 class="sec-title" id="galeria-title">Galeria de Fotos</h2>
-      <p class="sec-sub">Imagens que eternizam os vínculos criados neste dia especial.</p>
+    <h2 class="gal__heading">Galeria de fotos</h2>
+
+    <div class="gal__masonry" id="gal-masonry">
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5699.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5699.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5711.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5711.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5736.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5736.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5741.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5741.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5747.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5747.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5749.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5749.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5753.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5753.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5755.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5755.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5756.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5756.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5757.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5757.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5764.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5764.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5792.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5792.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5794.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5794.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5798.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5798.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5802.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5802.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5815.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5815.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5818.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5818.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5829.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5829.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5849.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5849.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5875.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5875.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5877.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5877.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5879.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5879.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5888.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5888.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5923.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5923.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5925.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5925.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5928.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5928.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5941.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5941.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5943.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5943.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5947.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5947.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5949.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5949.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5962.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5962.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5965.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5965.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5968.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5968.jpg">⬇</button></div>
+      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5970.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5970.jpg">⬇</button></div>
     </div>
 
-    <div class="galeria__masonry" id="gal-masonry">
-
-      <div class="galeria__item g-p gi--b1">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-l gi--y1">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-s gi--r1">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-l gi--g1">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-p gi--b2">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-w gi--y2">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-s gi--r2">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-l gi--g2">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-p gi--b3">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-s gi--y3">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-l gi--r3">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="galeria__item g-p gi--g3">
-        <div class="galeria__overlay"><span class="galeria__overlay-icon">🔍</span></div>
-      </div>
-
+    <div class="gal__btn-wrap">
+      <button class="gal__btn" id="gal-ver-mais">Ver mais</button>
+      <button class="gal__btn gal__btn--solid" id="gal-baixar-todas">⬇ Baixar todas as fotos</button>
     </div>
+
+  </div>
+
+  <div class="gal__stripe" aria-hidden="true">
+    <div class="gal__stripe-seg"></div>
+    <div class="gal__stripe-seg"></div>
+    <div class="gal__stripe-seg"></div>
+    <div class="gal__stripe-seg"></div>
   </div>
 </section>
+
+<script>
+  (function () {
+    function initGaleria() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to('.gal__item:not(.gal--hidden) .gal__img', {
+        opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.04,
+        scrollTrigger: { trigger: '#galeria', start: 'top 80%' }
+      });
+    }
+    if (document.readyState === 'complete') { initGaleria(); }
+    else { window.addEventListener('load', initGaleria); }
+  }());
+</script>
+
+
+<script>
+  (function () {
+
+    /* ══════════════════════════════════════════
+       VER MAIS — show 6 items at a time
+       ══════════════════════════════════════════ */
+    var PER_PAGE = 6;
+    var items = Array.from(document.querySelectorAll('.gal__item'));
+    var verMaisBtn = document.getElementById('gal-ver-mais');
+    var shown = 0;
+
+    if (verMaisBtn && items.length > 0) {
+      items.forEach(function (item, i) {
+        if (i >= PER_PAGE) item.classList.add('gal--hidden');
+      });
+      shown = PER_PAGE;
+
+      verMaisBtn.addEventListener('click', function () {
+        var batch = items.slice(shown, shown + PER_PAGE);
+        batch.forEach(function (item) {
+          item.classList.remove('gal--hidden');
+          void item.offsetWidth;
+          item.classList.add('gal--revealing');
+          var img = item.querySelector('.gal__img');
+          if (img) { img.style.opacity = '0'; img.style.transform = 'translateY(24px)'; }
+          item.addEventListener('animationend', function () {
+            item.classList.remove('gal--revealing');
+            if (img) { img.style.opacity = '1'; img.style.transform = 'none'; }
+          }, { once: true });
+        });
+        shown += batch.length;
+        if (shown >= items.length) {
+          verMaisBtn.textContent = 'Todas as fotos exibidas';
+          verMaisBtn.disabled = true;
+        }
+      });
+    }
+
+
+    /* ══════════════════════════════════════════
+       LIGHTBOX
+       ══════════════════════════════════════════ */
+    var overlay  = document.getElementById('lb-overlay');
+    var lbImg    = document.getElementById('lb-img');
+    var lbClose  = document.getElementById('lb-close');
+    var lbPrev   = document.getElementById('lb-prev');
+    var lbNext   = document.getElementById('lb-next');
+    var lbCount  = document.getElementById('lb-counter');
+    var lbIndex  = 0;
+    /* Only srcs of currently visible items for navigation */
+    function visibleSrcs() {
+      return items
+        .filter(function (item) { return !item.classList.contains('gal--hidden'); })
+        .map(function (item) { return item.querySelector('.gal__img').src; });
+    }
+
+    function openLb(index) {
+      var srcs = visibleSrcs();
+      lbIndex = Math.max(0, Math.min(index, srcs.length - 1));
+      lbImg.src = srcs[lbIndex];
+      lbCount.textContent = (lbIndex + 1) + ' / ' + srcs.length;
+      overlay.classList.add('lb-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLb() {
+      overlay.classList.remove('lb-open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    function navigate(dir) {
+      var srcs = visibleSrcs();
+      lbIndex = (lbIndex + dir + srcs.length) % srcs.length;
+      lbImg.src = srcs[lbIndex];
+      lbCount.textContent = (lbIndex + 1) + ' / ' + srcs.length;
+    }
+
+    /* Wire up clicks on gallery items */
+    items.forEach(function (item, i) {
+      item.addEventListener('click', function (e) {
+        if (e.target.classList.contains('gal__dl-btn')) return;
+        var visible = items.filter(function (it) { return !it.classList.contains('gal--hidden'); });
+        var visIndex = visible.indexOf(item);
+        if (visIndex !== -1) openLb(visIndex);
+      });
+    });
+
+    if (lbClose)  lbClose.addEventListener('click', closeLb);
+    if (lbPrev)   lbPrev.addEventListener('click', function () { navigate(-1); });
+    if (lbNext)   lbNext.addEventListener('click', function () { navigate(1); });
+
+    overlay && overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeLb();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!overlay.classList.contains('lb-open')) return;
+      if (e.key === 'Escape')     closeLb();
+      if (e.key === 'ArrowLeft')  navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+
+
+    /* ══════════════════════════════════════════
+       INDIVIDUAL DOWNLOAD — fetch local + Blob
+       ══════════════════════════════════════════ */
+    const fotos = [
+      { src: './_FOTOS%20TRATADAS/_MG_5699.jpg',  nome: '_MG_5699.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5711.jpg',  nome: '_MG_5711.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5736.jpg',  nome: '_MG_5736.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5741.jpg',  nome: '_MG_5741.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5747.jpg',  nome: '_MG_5747.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5749.jpg',  nome: '_MG_5749.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5753.jpg',  nome: '_MG_5753.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5755.jpg',  nome: '_MG_5755.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5756.jpg',  nome: '_MG_5756.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5757.jpg',  nome: '_MG_5757.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5764.jpg',  nome: '_MG_5764.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5792.jpg',  nome: '_MG_5792.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5794.jpg',  nome: '_MG_5794.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5798.jpg',  nome: '_MG_5798.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5802.jpg',  nome: '_MG_5802.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5815.jpg',  nome: '_MG_5815.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5818.jpg',  nome: '_MG_5818.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5829.jpg',  nome: '_MG_5829.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5849.jpg',  nome: '_MG_5849.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5875.jpg',  nome: '_MG_5875.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5877.jpg',  nome: '_MG_5877.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5879.jpg',  nome: '_MG_5879.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5888.jpg',  nome: '_MG_5888.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5923.jpg',  nome: '_MG_5923.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5925.jpg',  nome: '_MG_5925.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5928.jpg',  nome: '_MG_5928.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5941.jpg',  nome: '_MG_5941.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5943.jpg',  nome: '_MG_5943.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5947.jpg',  nome: '_MG_5947.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5949.jpg',  nome: '_MG_5949.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5962.jpg',  nome: '_MG_5962.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5965.jpg',  nome: '_MG_5965.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5968.jpg',  nome: '_MG_5968.jpg'  },
+      { src: './_FOTOS%20TRATADAS/_MG_5970.jpg',  nome: '_MG_5970.jpg'  },
+    ];
+
+    async function downloadFoto(src, nome) {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = function() {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        canvas.getContext('2d').drawImage(img, 0, 0);
+        const a = document.createElement('a');
+        a.href = canvas.toDataURL('image/jpeg', 0.95);
+        a.download = nome;
+        a.click();
+      };
+      img.src = src;
+    }
+
+    document.querySelectorAll('.gal__dl-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var dataSrc = btn.getAttribute('data-src');
+        var nome = decodeURIComponent(dataSrc.split('/').pop());
+        var foto = fotos.find(function (f) { return f.nome === nome; });
+        var src = foto ? foto.src : dataSrc;
+        downloadFoto(src, nome).catch(function () {
+          alert('Erro ao baixar a foto. Tente novamente.');
+        });
+      });
+    });
+
+
+    /* ══════════════════════════════════════════
+       BAIXAR TODAS — JSZip + FileSaver (local)
+       ══════════════════════════════════════════ */
+    async function baixarTodas() {
+      try {
+        const zip = new JSZip();
+        await Promise.all(fotos.map(async (foto) => {
+          try {
+            console.log('Tentando buscar:', foto.src);
+            const response = await fetch(foto.src);
+            console.log('Status da resposta:', response.status, response.statusText);
+            if (!response.ok) throw new Error(`HTTP ${response.status} - ${foto.src}`);
+            const blob = await response.blob();
+            console.log('Blob gerado:', blob.size, 'bytes');
+            zip.file(foto.nome, blob);
+          } catch (err) {
+            console.error('Erro na foto:', foto.src, err);
+            throw err;
+          }
+        }));
+        const content = await zip.generateAsync({ type: 'blob' });
+        saveAs(content, 'fotos-galeria.zip');
+      } catch (err) {
+        console.error('Erro geral:', err);
+        alert('Erro detalhado: ' + err.message);
+      }
+    }
+
+    var baixarBtn = document.getElementById('gal-baixar-todas');
+    if (baixarBtn) {
+      baixarBtn.addEventListener('click', async function () {
+        if (typeof JSZip === 'undefined' || typeof saveAs === 'undefined') {
+          alert('Bibliotecas de download ainda carregando. Tente em instantes.');
+          return;
+        }
+        baixarBtn.disabled = true;
+        baixarBtn.textContent = 'Preparando download…';
+        await baixarTodas();
+        baixarBtn.disabled = false;
+        baixarBtn.textContent = '⬇ Baixar todas as fotos';
+      });
+    }
+
+  }());
+</script>
 
 
 <!-- ════════════════════════════════════════════════════════════
      FOOTER
      ════════════════════════════════════════════════════════════ -->
-<footer id="footer">
-  <div class="footer__inner">
+<style>
+  #footer-main {
+    position: relative;
+    background: #0d1b3e;
+    padding: 3.5rem 2rem 2rem;
+    overflow: hidden;
+    text-align: center;
+  }
 
-    <!-- TEA puzzle SVG — pulsing animation from head CSS -->
-    <div class="footer__puzzle" aria-hidden="true">
-      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Blue piece — top-left -->
-        <path d="M8 8 L48 8 L48 24 Q56 24 56 32 Q56 40 48 40 L48 56 L8 56 L8 40 Q0 40 0 32 Q0 24 8 24 Z" fill="#1A73C8" opacity="0.9"/>
-        <!-- Yellow piece — top-right -->
-        <path d="M58 8 L98 8 L98 24 Q106 24 106 32 Q106 40 98 40 L98 56 L58 56 L58 40 Q50 40 50 32 Q50 24 58 24 Z" fill="#F5C518" opacity="0.9"/>
-        <!-- Red piece — bottom-left -->
-        <path d="M8 62 L48 62 L48 78 Q56 78 56 86 Q56 94 48 94 L48 110 L8 110 L8 94 Q0 94 0 86 Q0 78 8 78 Z" fill="#E03434" opacity="0.9"/>
-        <!-- Green piece — bottom-right -->
-        <path d="M58 62 L98 62 L98 78 Q106 78 106 86 Q106 94 98 94 L98 110 L58 110 L58 94 Q50 94 50 86 Q50 78 58 78 Z" fill="#6ABF3A" opacity="0.9"/>
+  /* Top 4-color stripe */
+  .footer-main__stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    display: flex;
+  }
+  .footer-main__stripe-seg              { flex: 1; }
+  .footer-main__stripe-seg:nth-child(1) { background: #3A8FD4; }
+  .footer-main__stripe-seg:nth-child(2) { background: #F0B429; }
+  .footer-main__stripe-seg:nth-child(3) { background: #D63B3B; }
+  .footer-main__stripe-seg:nth-child(4) { background: #6CB33F; }
+
+  /* Corner puzzle pieces */
+  .footer-main__puzzle {
+    position: absolute;
+    width: 90px;
+    opacity: 0.22;
+    pointer-events: none;
+    user-select: none;
+  }
+  .footer-main__puzzle--tl { top: 16px;    left: 16px;   transform: rotate(-20deg); }
+  .footer-main__puzzle--tr { top: 16px;    right: 16px;  transform: rotate(15deg);  filter: hue-rotate(40deg); }
+  .footer-main__puzzle--bl { bottom: 16px; left: 16px;   transform: rotate(10deg);  filter: hue-rotate(200deg); }
+  .footer-main__puzzle--br { bottom: 16px; right: 16px;  transform: rotate(-12deg); filter: hue-rotate(310deg); }
+
+  /* Center content */
+  .footer-main__body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+  }
+
+  /* Logo mark — heart SVG */
+  .footer-main__logo-mark {
+    width: 64px;
+    height: 64px;
+  }
+
+  .footer-main__logo-name {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .footer-main__logo-tagline {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.1rem;
+  }
+
+  /* Divider */
+  .footer-main__divider {
+    width: 48px;
+    height: 1px;
+    background: rgba(255,255,255,0.12);
+  }
+
+  /* WhatsApp link */
+  .footer-main__whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 10px 24px;
+    border-radius: 100px;
+    background: #25D366;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .footer-main__whatsapp:hover {
+    background: #1ebe5b;
+    transform: translateY(-2px);
+  }
+
+  .footer-main__whatsapp-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  /* Copyright */
+  .footer-main__copy {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 480px) {
+    .footer-main__puzzle { width: 60px; }
+    .footer-main__puzzle--tl,
+    .footer-main__puzzle--bl { left: 4px; }
+    .footer-main__puzzle--tr,
+    .footer-main__puzzle--br { right: 4px; }
+  }
+</style>
+
+<footer id="footer-main">
+
+  <!-- Top stripe -->
+  <div class="footer-main__stripe" aria-hidden="true">
+    <div class="footer-main__stripe-seg"></div>
+    <div class="footer-main__stripe-seg"></div>
+    <div class="footer-main__stripe-seg"></div>
+    <div class="footer-main__stripe-seg"></div>
+  </div>
+
+  <!-- Corner puzzle decorations -->
+  <img src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--tl" aria-hidden="true">
+  <img src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--tr" aria-hidden="true">
+  <img src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--bl" aria-hidden="true">
+  <img src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--br" aria-hidden="true">
+
+  <div class="footer-main__body">
+
+    <!-- Logo: heart SVG + name -->
+    <div>
+      <svg class="footer-main__logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Heart shape -->
+        <path d="M32 54 C32 54 8 38 8 22 C8 14.3 14.3 8 22 8 C26.4 8 30.3 10.1 32 13.4 C33.7 10.1 37.6 8 42 8 C49.7 8 56 14.3 56 22 C56 38 32 54 32 54Z" fill="#3A8FD4" opacity="0.9"/>
+        <!-- Left person silhouette -->
+        <ellipse cx="25" cy="27" rx="4" ry="4" fill="white" opacity="0.9"/>
+        <path d="M18 42 Q18 34 25 34 Q32 34 32 42" fill="white" opacity="0.9"/>
+        <!-- Right person silhouette -->
+        <ellipse cx="39" cy="27" rx="4" ry="4" fill="white" opacity="0.9"/>
+        <path d="M32 42 Q32 34 39 34 Q46 34 46 42" fill="white" opacity="0.9"/>
       </svg>
+      <div class="footer-main__logo-name">Clínica Espaço Saúde</div>
+      <div class="footer-main__logo-tagline">Autismo na Prática · 2025</div>
     </div>
 
-    <div class="footer__logo-text">Clínica Espaço Saúde</div>
-    <div class="footer__event-name">Evento Especial TEA</div>
+    <div class="footer-main__divider"></div>
 
-    <p class="footer__desc">
-      Este portal foi criado com carinho para preservar a memória de um
-      dia muito especial — dedicado às famílias, crianças e profissionais
-      do universo TEA.
-    </p>
+    <!-- WhatsApp -->
+    <a
+      class="footer-main__whatsapp"
+      href="https://wa.me/5515991232108"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar no WhatsApp: (15) 99123-2108"
+    >
+      <!-- WhatsApp SVG icon -->
+      <svg class="footer-main__whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.985l6.337-1.441A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.364l-.36-.213-3.76.856.87-3.665-.234-.376A9.818 9.818 0 1112 21.818z"/>
+      </svg>
+      (15) 99123-2108
+    </a>
 
-    <div class="footer__divider"></div>
+    <div class="footer-main__divider"></div>
 
-    <p class="footer__credits">
-      © 2025 Clínica Espaço Saúde · Todos os direitos reservados
-    </p>
+    <!-- Copyright -->
+    <p class="footer-main__copy">© 2025 Clínica Espaço Saúde. Todos os direitos reservados.</p>
 
   </div>
 </footer>
 
 
-<!-- ════════════════════════════════════════════════════════════
-     JAVASCRIPT
-     ════════════════════════════════════════════════════════════ -->
-
-<script>
-  /* Navbar mobile burger */
-  (function () {
-    var burger = document.getElementById('nav-burger');
-    var links  = document.getElementById('nav-links');
-    if (!burger || !links) return;
-    burger.addEventListener('click', function () {
-      var open = links.classList.toggle('open');
-      burger.setAttribute('aria-expanded', open);
-    });
-    links.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        links.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }());
-</script>
-
-<script>
-  /* Video play/pause button — standard player UX */
-  (function () {
-    var vid   = document.getElementById('hero-video');
-    var btn   = document.getElementById('vid-play-btn');
-    var icon  = document.getElementById('vid-play-icon');
-    var wrap  = document.getElementById('vid-player');
-    if (!vid || !btn || !icon || !wrap) return;
-
-    var hideTimer = null;
-
-    function setIcon() {
-      icon.textContent = vid.paused ? '▶' : '⏸';
-      btn.setAttribute('aria-label', vid.paused ? 'Reproduzir' : 'Pausar');
-    }
-
-    function showBtn() {
-      clearTimeout(hideTimer);
-      btn.classList.remove('fade-out');
-    }
-
-    function scheduleFade(delay) {
-      clearTimeout(hideTimer);
-      hideTimer = setTimeout(function () {
-        if (!vid.paused) btn.classList.add('fade-out');
-      }, delay);
-    }
-
-    /* Toggle play/pause on button click */
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (vid.paused) { vid.play(); } else { vid.pause(); }
-    });
-
-    /* Clicking anywhere on the container shows the button briefly */
-    wrap.addEventListener('click', function () {
-      setIcon();
-      showBtn();
-      scheduleFade(2000);
-    });
-
-    /* Keep icon in sync */
-    vid.addEventListener('play',  setIcon);
-    vid.addEventListener('pause', function () {
-      setIcon();
-      showBtn(); /* always show when paused */
-    });
-
-    /* Autoplay: fade out after 1.5 s once playing */
-    vid.addEventListener('playing', function () {
-      setIcon();
-      scheduleFade(1500);
-    });
-
-    /* Attempt autoplay; keep button visible on failure */
-    var p = vid.play();
-    if (p !== undefined) {
-      p.catch(function () { setIcon(); showBtn(); });
-    }
-  }());
-
-  /* Entrevista video cards — play on overlay click, restore on pause/end */
-  (function () {
-    document.querySelectorAll('.ecard-overlay').forEach(function (overlay) {
-      var vid = overlay.previousElementSibling;
-      overlay.addEventListener('click', function () {
-        overlay.classList.add('is-hidden');
-        vid.play();
-      });
-      vid.addEventListener('pause',  function () { overlay.classList.remove('is-hidden'); });
-      vid.addEventListener('ended',  function () { overlay.classList.remove('is-hidden'); });
-    });
-  }());
-
-  /* Sound toggle */
-  (function () {
-    var vid = document.getElementById('hero-video');
-    var btn = document.getElementById('vid-sound-btn');
-    if (!vid || !btn) return;
-    btn.addEventListener('click', function () {
-      vid.muted = !vid.muted;
-      btn.textContent = vid.muted ? '🔇' : '🔊';
-      btn.setAttribute('aria-label', vid.muted ? 'Ativar som' : 'Silenciar');
-    });
-  }());
-</script>
-
-<script>
-  /* Puzzle icon parallax — margin-top offset avoids conflicting with CSS float animation */
-  (function () {
-    var icons = document.querySelectorAll('.hero-icons .hi[data-speed]');
-    if (!icons.length) return;
-    function onScroll() {
-      var scrollY = window.scrollY;
-      for (var i = 0; i < icons.length; i++) {
-        icons[i].style.marginTop = (scrollY * parseFloat(icons[i].dataset.speed)) + 'px';
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }());
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (typeof gsap === 'undefined') return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    /* ── Hero entrance ── */
-    gsap.from('#hero-badge', {
-      opacity: 0, y: 16, duration: 0.8, ease: 'power2.out', delay: 0.2
-    });
-
-    gsap.from('#hero-title .ht-1, #hero-title .ht-2, #hero-title .ht-3', {
-      opacity: 0, y: 30, duration: 0.9, stagger: 0.1, ease: 'power3.out', delay: 0.5
-    });
-
-    gsap.from('#hero-sub', {
-      opacity: 0, y: 20, duration: 0.9, ease: 'power2.out', delay: 0.9
-    });
+<!-- Lightbox overlay -->
+<div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Visualizar foto">
+  <button class="lb-btn" id="lb-close"  aria-label="Fechar">✕</button>
+  <button class="lb-btn" id="lb-prev"   aria-label="Foto anterior">‹</button>
+  <img id="lb-img" src="" alt="Foto ampliada do evento">
+  <button class="lb-btn" id="lb-next"   aria-label="Próxima foto">›</button>
+  <span id="lb-counter"></span>
+</div>
 
 
-    /* ── Videos section ── */
-    ScrollTrigger.create({
-      trigger: '#videos',
-      start: 'top 78%',
-      onEnter: function () {
-        gsap.from('#videos-title', { opacity: 0, y: 30, duration: 0.9, ease: 'power3.out' });
-        gsap.from('#vid-player',   { opacity: 0, y: 44, scale: 0.97, duration: 1, ease: 'power3.out', delay: 0.15 });
-      }
-    });
-
-    /* ── Entrevistas ── */
-    ScrollTrigger.create({
-      trigger: '#entrevistas',
-      start: 'top 76%',
-      onEnter: function () {
-        gsap.from('#entrevistas-title', { opacity: 0, y: 30, duration: 0.9, ease: 'power3.out' });
-        gsap.to('.entrevista-card', {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          stagger: { each: 0.1, from: 'start' },
-          ease: 'power3.out',
-          delay: 0.2
-        });
-      }
-    });
-
-    /* ── Galeria ── */
-    ScrollTrigger.create({
-      trigger: '#galeria',
-      start: 'top 76%',
-      onEnter: function () {
-        gsap.from('#galeria-title', { opacity: 0, y: 30, duration: 0.9, ease: 'power3.out' });
-        gsap.to('.galeria__item', {
-          opacity: 1,
-          y: 0,
-          duration: 0.55,
-          stagger: { each: 0.06, from: 'start' },
-          ease: 'power2.out',
-          delay: 0.2
-        });
-      }
-    });
-
-    /* ── Footer ── */
-    ScrollTrigger.create({
-      trigger: '#footer',
-      start: 'top 82%',
-      onEnter: function () {
-        gsap.from('#footer .footer__inner > *', {
-          opacity: 0,
-          y: 26,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power2.out'
-        });
-      }
-    });
-
-  });
-</script>
 
 </body>
 
