@@ -1339,7 +1339,7 @@
       transition: opacity 0.4s ease;
     }
 
-    /* Paused: show ▶, hide ⏸ */
+    /* Paused: show play icon, hide pause icon */
     .ecard-btn--play  { display: flex; }
     .ecard-btn--pause { display: none; }
 
@@ -2787,11 +2787,11 @@
 
       
       <button class="mm__play-btn" id="mm-play-btn" aria-label="Reproduzir vídeo">
-        <span class="mm__play-icon" id="mm-play-icon">▶</span>
+        <span class="mm__play-icon" id="mm-play-icon"><svg viewBox="0 0 24 24" fill="white" width="22" height="22"><polygon points="5,3 19,12 5,21"/></svg></span>
       </button>
 
       
-      <button class="mm__sound-btn" id="mm-sound-btn" aria-label="Ativar som">🔇</button>
+      <button class="mm__sound-btn" id="mm-sound-btn" aria-label="Ativar som"><svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M3 9v6h4l5 5V4L7 9H3z"/><line x1="23" y1="9" x2="17" y2="15" stroke="white" stroke-width="2"/><line x1="17" y1="9" x2="23" y2="15" stroke="white" stroke-width="2"/></svg></button>
     </div>
 
   </div>
@@ -2808,6 +2808,11 @@
 <script>
   /* Melhores momentos — video controls */
   (function () {
+    var SVG_PLAY  = '<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><polygon points="5,3 19,12 5,21"/></svg>';
+    var SVG_PAUSE = '<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>';
+    var SVG_MUTED = '<svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M3 9v6h4l5 5V4L7 9H3z"/><line x1="23" y1="9" x2="17" y2="15" stroke="white" stroke-width="2"/><line x1="17" y1="9" x2="23" y2="15" stroke="white" stroke-width="2"/></svg>';
+    var SVG_SOUND = '<svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+
     var vid      = document.getElementById('mm-video');
     var playBtn  = document.getElementById('mm-play-btn');
     var playIcon = document.getElementById('mm-play-icon');
@@ -2818,7 +2823,7 @@
     var hideTimer = null;
 
     function syncIcon() {
-      playIcon.textContent = vid.paused ? '▶' : '⏸';
+      playIcon.innerHTML = vid.paused ? SVG_PLAY : SVG_PAUSE;
       playBtn.setAttribute('aria-label', vid.paused ? 'Reproduzir' : 'Pausar');
     }
 
@@ -2854,7 +2859,7 @@
     /* Sound toggle */
     soundBtn.addEventListener('click', function () {
       vid.muted = !vid.muted;
-      soundBtn.textContent = vid.muted ? '🔇' : '🔊';
+      soundBtn.innerHTML = vid.muted ? SVG_MUTED : SVG_SOUND;
       soundBtn.setAttribute('aria-label', vid.muted ? 'Ativar som' : 'Silenciar');
     });
   }());
@@ -3142,6 +3147,8 @@
 <script>
   /* Entrevistas — play/pause with sound, mutual exclusion */
   (function () {
+    var SVG_PLAY  = '<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><polygon points="5,3 19,12 5,21"/></svg>';
+    var SVG_PAUSE = '<svg viewBox="0 0 24 24" fill="white" width="22" height="22"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>';
     var cards = Array.from(document.querySelectorAll('.ec'));
 
     function stopAll(except) {
@@ -3151,7 +3158,7 @@
         var b = c.querySelector('.ec__play-btn');
         if (v && !v.paused) v.pause();
         c.classList.remove('is-playing');
-        if (b) b.textContent = '▶';
+        if (b) b.innerHTML = SVG_PLAY;
       });
     }
 
@@ -3170,17 +3177,17 @@
           var p = vid.play();
           if (p) p.catch(function () {});
           card.classList.add('is-playing');
-          btn.textContent = '⏸';
+          btn.innerHTML = SVG_PAUSE;
         } else {
           vid.pause();
           card.classList.remove('is-playing');
-          btn.textContent = '▶';
+          btn.innerHTML = SVG_PLAY;
         }
       });
 
       vid.addEventListener('ended', function () {
         card.classList.remove('is-playing');
-        btn.textContent = '▶';
+        btn.innerHTML = SVG_PLAY;
       });
     });
 
