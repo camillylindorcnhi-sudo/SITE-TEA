@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-
-
 <head>
-
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Título da aba / SEO primário -->
+  
   <title>Nosso Dia Inesquecível — Clínica Espaço Saúde</title>
 
-  <!-- Descrição exibida em buscadores (max ~160 chars) -->
+  
   <meta
     name="description"
     content="Reviva cada momento do Evento Especial da Clínica Espaço Saúde: vídeos, entrevistas e galeria de fotos de um dia inesquecível no universo TEA."
   />
 
-  <!-- Autor / proprietário -->
+  
   <meta name="author" content="Clínica Espaço Saúde" />
 
-  <!-- Robots: indexável por padrão; ajuste para noindex antes do lançamento se necessário -->
+  
   <meta name="robots" content="index, follow" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-  <!-- Open Graph (compartilhamento em redes sociais) -->
+  
   <meta property="og:type"        content="website" />
   <meta property="og:title"       content="Nosso Dia Inesquecível — Clínica Espaço Saúde" />
   <meta property="og:description" content="Vídeos, entrevistas e galeria de fotos do Nosso Dia Inesquecível — reviva cada momento." />
@@ -34,23 +31,18 @@
   <meta property="og:url"         content="https://eventoespaco.com.br" />
   <meta property="og:locale"      content="pt_BR" />
 
-  <!-- Twitter Card -->
+  
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Nosso Dia Inesquecível — Clínica Espaço Saúde" />
   <meta name="twitter:description" content="Vídeos, entrevistas e galeria de fotos do Nosso Dia Inesquecível — Clínica Espaço Saúde." />
   <meta name="twitter:image"       content="assets/img/og-cover.jpg" />
 
-  <!-- Favicon -->
+  
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
-
-  <!-- ──────────────────────────────────────────────────────────
-       2. FONTES — Google Fonts
-       • Baloo 2   → títulos / display  (wght 400–800)
-       • Nunito    → corpo / UI         (wght 300–700)
-       Carregado com preconnect para reduzir latência.
-       ────────────────────────────────────────────────────────── -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link
@@ -58,16 +50,12 @@
     rel="stylesheet"
   />
 
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" defer></script>
-
-
-
 
   <style>
 
@@ -132,7 +120,6 @@
       --transition-slow:   600ms ease;
     }
 
-
     *,
     *::before,
     *::after {
@@ -154,7 +141,6 @@
       max-width: 100%;
     }
 
-
     input,
     button,
     textarea,
@@ -171,7 +157,6 @@
         scroll-behavior: auto !important;
       }
     }
-
 
     html {
       scroll-behavior: smooth;
@@ -203,8 +188,6 @@
     }
 
   </style>
-
-
 
   <style>
 
@@ -335,9 +318,6 @@
       }
 
     }
-
-
-
 
     .hero {
       position: relative;
@@ -561,8 +541,6 @@
       .hero__scroll    { display: none; }
     }
 
-
-
     .hero-icons {
       position: absolute; inset: 0; z-index: 10;
       pointer-events: none; overflow: hidden;
@@ -600,7 +578,6 @@
     .fi-2, .fi-6, .fi-10, .fi-14, .fi-18 { filter: drop-shadow(0 0 12px #F5C518) drop-shadow(0 0 24px #F5C518); }
     .fi-3, .fi-7, .fi-11, .fi-15         { filter: drop-shadow(0 0 12px #E03434) drop-shadow(0 0 24px #E03434); }
     .fi-4, .fi-8, .fi-12, .fi-16         { filter: drop-shadow(0 0 12px #6ABF3A) drop-shadow(0 0 24px #6ABF3A); }
-
 
     /* ══════════════════════════════════════════════════════════
        6.4  GALERIA — scroll-pinned canvas frame animation
@@ -763,7 +740,6 @@
 
     #galeria:hover .slideshow__pause-hint { opacity: 1; }
 
-
     /* ══════════════════════════════════════════════════════════
        6.5  DISSOLVE — WebGL noise transition section
        ══════════════════════════════════════════════════════════ */
@@ -812,19 +788,15 @@
     .dissolve__word:nth-child(2) { color: #fff; }
     .dissolve__word:nth-child(3) { color: #F5C518; text-shadow: 0 0 60px rgba(245,197,24,0.5); }
 
-
     /* ══════════════════════════════════════════════════════════
        6.7  TÍTULO MULTICOLORIDO — 4 palavras, 4 cores TEA
        ══════════════════════════════════════════════════════════ */
 
     .hero__title { color: #fff; }
 
-
-
-
   </style>
 
-  <!-- ── #camera-intro ── -->
+  
   <style>
     #camera-intro {
       position: relative;
@@ -863,7 +835,7 @@
     }
   </style>
 
-  <!-- ── #butterfly-scroll ── -->
+  
   <style>
     #butterfly-scroll {
       position: relative;
@@ -1000,7 +972,7 @@
     }
   </style>
 
-  <!-- ── Sections: videos · entrevistas · conexoes · galeria · footer ── -->
+  
   <style>
 
     /* ── Shared header utilities ─────────────────────────────────── */
@@ -1032,7 +1004,6 @@
       max-width: 520px;
       margin: 0 auto;
     }
-
 
     /* ══════════════════════════════════════════════════════════
        VIDEOS
@@ -1254,7 +1225,6 @@
       background:rgba(74,159,224,0.45);
     }
 
-
     /* ══════════════════════════════════════════════════════════
        ENTREVISTAS
        ══════════════════════════════════════════════════════════ */
@@ -1399,7 +1369,6 @@
       .entrevistas__grid { grid-template-columns: 1fr; }
       .entrevista-card__thumb { height: clamp(280px, 55vh, 500px); }
     }
-
 
     /* ══════════════════════════════════════════════════════════
        CONEXOES
@@ -1549,7 +1518,6 @@
       .polaroid--right { margin-right:2%; }
     }
 
-
     /* ══════════════════════════════════════════════════════════
        GALERIA — masonry (overrides old slideshow styles)
        ══════════════════════════════════════════════════════════ */
@@ -1671,7 +1639,6 @@
     @media (max-width:900px)  { .galeria__masonry { columns:2; } }
     @media (max-width:480px)  { .galeria__masonry { columns:2; column-gap:8px; } .galeria__item { margin-bottom:8px; } }
 
-
     /* ══════════════════════════════════════════════════════════
        FOOTER
        ══════════════════════════════════════════════════════════ */
@@ -1757,7 +1724,7 @@
 
   </style>
 
-  <!-- ── Mobile responsive overrides ── -->
+  
   <style>
 
     /* ══════════════════════════════════════
@@ -1855,12 +1822,12 @@
         overflow: visible !important;
       }
 
-      /* Hide background-image div on mobile — use <img> instead */
+      /* Hide background-image div on mobile — use <img loading="lazy"> instead */
       .hero__img-panel {
         display: none !important;
       }
 
-      /* Mobile <img> fallback — guaranteed to render on all browsers */
+      /* Mobile <img loading="lazy"> fallback — guaranteed to render on all browsers */
       .hero__img-mobile {
         display: block !important;
         width: 100% !important;
@@ -2178,46 +2145,42 @@
   .hero-new__stripe-seg:nth-child(4)  { background: #6CB33F; }
 </style>
 
-
-<!-- ════════════════════════════════════════════════════════════
-     HERO
-     ════════════════════════════════════════════════════════════ -->
 <section class="hero-new" id="inicio">
 
-  <!-- Dark overlay rgba(13,27,42,0.5) -->
+  
   <div class="hero-new__overlay" aria-hidden="true"></div>
 
-  <!-- 6 floating puzzle icons — glow in TEA colors, no CSS color filters on image itself -->
+  
   <div class="hero-new__icons" aria-hidden="true">
-    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-1">
-    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-2">
-    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-3">
-    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-4">
-    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-5">
-    <img src="Icons/puzzle-icon.png" alt="" class="hni hni-6">
+    <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="hni hni-1">
+    <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="hni hni-2">
+    <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="hni hni-3">
+    <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="hni hni-4">
+    <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="hni hni-5">
+    <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="hni hni-6">
   </div>
 
-  <!-- Center content -->
+  
   <div class="hero-new__content">
 
-    <!-- Puzzle icon — raw image, depth shadow only, no filters on the image -->
-    <img src="Icons/puzzle-icon.png" alt="" class="hero-new__puzzle-icon">
+    
+    <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="hero-new__puzzle-icon">
 
-    <!-- Badge pill -->
+    
     <div class="hero-new__badge">Autismo na Prática · Maio 2025</div>
 
-    <!-- Title: "Autismo" white + "na Prática" yellow -->
+    
     <h1 class="hero-new__title">
       <span class="hero-new__title-white">Autismo</span>
       <span class="hero-new__title-yellow">na Prática</span>
     </h1>
 
-    <!-- Subtitle -->
+    
     <p class="hero-new__subtitle">Como apoiar no dia a dia com orientação de especialistas</p>
 
   </div>
 
-  <!-- Bottom 4-color horizontal stripe: blue | yellow | red | green -->
+  
   <div class="hero-new__stripe" aria-hidden="true">
     <div class="hero-new__stripe-seg"></div>
     <div class="hero-new__stripe-seg"></div>
@@ -2227,10 +2190,6 @@
 
 </section>
 
-
-<!-- ════════════════════════════════════════════════════════════
-     SOBRE O EVENTO
-     ════════════════════════════════════════════════════════════ -->
 <style>
   #sobre {
     position: relative;
@@ -2342,7 +2301,7 @@
 
   <div class="sobre__inner">
 
-    <!-- Left: text -->
+    
     <div class="sobre__left" id="sobre-left">
       <h2 class="sobre__title">Sobre o evento</h2>
       <p class="sobre__text">
@@ -2352,7 +2311,7 @@
       </p>
     </div>
 
-    <!-- Right: metric cards 2×2 -->
+    
     <div class="sobre__grid" id="sobre-grid">
 
       <div class="sobre__card sobre__card--blue">
@@ -2377,7 +2336,7 @@
 
   </div>
 
-  <!-- Bottom 4-color stripe -->
+  
   <div class="sobre__stripe" aria-hidden="true">
     <div class="sobre__stripe-seg"></div>
     <div class="sobre__stripe-seg"></div>
@@ -2419,10 +2378,6 @@
   }());
 </script>
 
-
-<!-- ════════════════════════════════════════════════════════════
-     PALESTRANTES
-     ════════════════════════════════════════════════════════════ -->
 <style>
   #palestrantes {
     position: relative;
@@ -2572,9 +2527,9 @@
 
     <div class="palestrantes__list" id="pcard-list">
 
-      <!-- Card 1 — blue -->
+      
       <article class="pcard pcard--blue">
-        <img src="profissionais/Monica.jpeg" alt="Dra. Mônica Scattolin" class="pcard__photo">
+        <img loading="lazy" src="profissionais/Monica.jpeg" alt="Dra. Mônica Scattolin" class="pcard__photo">
         <div class="pcard__info">
           <div class="pcard__name">Dra. Mônica Scattolin</div>
           <div class="pcard__specialty">Neurologista Infantil</div>
@@ -2582,9 +2537,9 @@
         </div>
       </article>
 
-      <!-- Card 2 — yellow -->
+      
       <article class="pcard pcard--yellow">
-        <img src="profissionais/Keli.jpeg" alt="Keli Rodriguez" class="pcard__photo">
+        <img loading="lazy" src="profissionais/Keli.jpeg" alt="Keli Rodriguez" class="pcard__photo">
         <div class="pcard__info">
           <div class="pcard__name">Keli Rodriguez</div>
           <div class="pcard__specialty">Psicóloga</div>
@@ -2592,9 +2547,9 @@
         </div>
       </article>
 
-      <!-- Card 3 — green -->
+      
       <article class="pcard pcard--green">
-        <img src="profissionais/Patricia.jpeg" alt="Patrícia Medeiros Cardia" class="pcard__photo">
+        <img loading="lazy" src="profissionais/Patricia.jpeg" alt="Patrícia Medeiros Cardia" class="pcard__photo">
         <div class="pcard__info">
           <div class="pcard__name">Patrícia Medeiros Cardia</div>
           <div class="pcard__specialty">Fonoaudióloga</div>
@@ -2602,9 +2557,9 @@
         </div>
       </article>
 
-      <!-- Card 4 — red (no time badge) -->
+      
       <article class="pcard pcard--red">
-        <img src="profissionais/Andrea.jpeg" alt="Andrea Lungwitz Silva" class="pcard__photo">
+        <img loading="lazy" src="profissionais/Andrea.jpeg" alt="Andrea Lungwitz Silva" class="pcard__photo">
         <div class="pcard__info">
           <div class="pcard__name">Andrea Lungwitz Silva</div>
           <div class="pcard__specialty">Psicopedagoga</div>
@@ -2615,7 +2570,7 @@
     </div>
   </div>
 
-  <!-- Bottom 4-color stripe -->
+  
   <div class="palestrantes__stripe" aria-hidden="true">
     <div class="palestrantes__stripe-seg"></div>
     <div class="palestrantes__stripe-seg"></div>
@@ -2645,10 +2600,6 @@
   }());
 </script>
 
-
-<!-- ════════════════════════════════════════════════════════════
-     MELHORES MOMENTOS
-     ════════════════════════════════════════════════════════════ -->
 <style>
   #melhores-momentos {
     position: relative;
@@ -2816,12 +2767,12 @@
 <section id="melhores-momentos">
   <div class="mm__inner">
 
-    <!-- Left: text -->
+    
     <div class="mm__text" id="mm-text">
       <h2 class="mm__title">Melhores momentos</h2>
     </div>
 
-    <!-- Right: video -->
+    
     <div class="mm__video-wrap" id="mm-video-wrap">
       <video
         class="mm__video"
@@ -2834,18 +2785,18 @@
         preload="auto"
       ></video>
 
-      <!-- Play/pause overlay -->
+      
       <button class="mm__play-btn" id="mm-play-btn" aria-label="Reproduzir vídeo">
         <span class="mm__play-icon" id="mm-play-icon">▶</span>
       </button>
 
-      <!-- Sound toggle -->
+      
       <button class="mm__sound-btn" id="mm-sound-btn" aria-label="Ativar som">🔇</button>
     </div>
 
   </div>
 
-  <!-- Bottom 4-color stripe -->
+  
   <div class="mm__stripe" aria-hidden="true">
     <div class="mm__stripe-seg"></div>
     <div class="mm__stripe-seg"></div>
@@ -2933,10 +2884,6 @@
   }());
 </script>
 
-
-<!-- ════════════════════════════════════════════════════════════
-     ENTREVISTAS
-     ════════════════════════════════════════════════════════════ -->
 <style>
   #entrevistas {
     position: relative;
@@ -3129,7 +3076,7 @@
 
     <div class="ent__grid" id="ent-grid">
 
-      <!-- Mônica — blue -->
+      
       <article class="ec ec--blue">
         <iframe
           src="https://www.youtube.com/embed/8JG5_sDqaDs"
@@ -3142,7 +3089,7 @@
         </iframe>
       </article>
 
-      <!-- Keli  -->
+      
       <article class="ec ec--yellow">
       <iframe 
         width="315" height="560"
@@ -3155,7 +3102,7 @@
         </iframe>
       </article>
 
-      <!-- Andrea -->
+      
       <article class="ec ec--red">
         <iframe
           src="https://www.youtube.com/embed/ttv90ktFzco"
@@ -3168,7 +3115,7 @@
         </iframe>
       </article>
 
-      <!-- Patrícia — blue -->
+      
       <article class="ec ec--blue">
         <iframe
           src="https://www.youtube.com/embed/pj9WCrQIi9Q"
@@ -3252,10 +3199,6 @@
   }());
 </script>
 
-
-<!-- ════════════════════════════════════════════════════════════
-     GALERIA
-     ════════════════════════════════════════════════════════════ -->
 <style>
   #galeria {
     position: relative;
@@ -3494,40 +3437,40 @@
     <h2 class="gal__heading">Galeria de fotos</h2>
 
     <div class="gal__masonry" id="gal-masonry">
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5699.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5699.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5711.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5711.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5736.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5736.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5741.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5741.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5747.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5747.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5749.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5749.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5753.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5753.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5755.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5755.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5756.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5756.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5757.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5757.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5764.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5764.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5792.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5792.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5794.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5794.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5798.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5798.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5802.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5802.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5815.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5815.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5818.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5818.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5829.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5829.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5849.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5849.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5875.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5875.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5877.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5877.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5879.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5879.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5888.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5888.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5923.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5923.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5925.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5925.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5928.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5928.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5941.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5941.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5943.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5943.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5947.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5947.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5949.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5949.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5962.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5962.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5965.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5965.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5968.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5968.jpg">⬇</button></div>
-      <div class="gal__item"><img src="_FOTOS%20TRATADAS/_MG_5970.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5970.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5699.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5699.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5711.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5711.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5736.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5736.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5741.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5741.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5747.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5747.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5749.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5749.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5753.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5753.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5755.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5755.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5756.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5756.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5757.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5757.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5764.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5764.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5792.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5792.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5794.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5794.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5798.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5798.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5802.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5802.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5815.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5815.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5818.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5818.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5829.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5829.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5849.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5849.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5875.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5875.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5877.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5877.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5879.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5879.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5888.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5888.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5923.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5923.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5925.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5925.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5928.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5928.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5941.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5941.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5943.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5943.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5947.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5947.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5949.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5949.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5962.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5962.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5965.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5965.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5968.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5968.jpg">⬇</button></div>
+      <div class="gal__item"><img loading="lazy" src="_FOTOS%20TRATADAS/_MG_5970.jpg"  alt="Foto do evento" class="gal__img"><button class="gal__dl-btn" aria-label="Baixar foto" data-src="_FOTOS%20TRATADAS/_MG_5970.jpg">⬇</button></div>
     </div>
 
     <div class="gal__btn-wrap">
@@ -3559,7 +3502,6 @@
     else { window.addEventListener('load', initGaleria); }
   }());
 </script>
-
 
 <script>
   (function () {
@@ -3598,7 +3540,6 @@
         }
       });
     }
-
 
     /* ══════════════════════════════════════════
        LIGHTBOX
@@ -3663,7 +3604,6 @@
       if (e.key === 'ArrowLeft')  navigate(-1);
       if (e.key === 'ArrowRight') navigate(1);
     });
-
 
     /* ══════════════════════════════════════════
        INDIVIDUAL DOWNLOAD — fetch local + Blob
@@ -3734,7 +3674,6 @@
       });
     });
 
-
     /* ══════════════════════════════════════════
        BAIXAR TODAS — JSZip + FileSaver (local)
        ══════════════════════════════════════════ */
@@ -3781,10 +3720,6 @@
   }());
 </script>
 
-
-<!-- ════════════════════════════════════════════════════════════
-     FOOTER
-     ════════════════════════════════════════════════════════════ -->
 <style>
   #footer-main {
     position: relative;
@@ -3908,7 +3843,7 @@
 
 <footer id="footer-main">
 
-  <!-- Top stripe -->
+  
   <div class="footer-main__stripe" aria-hidden="true">
     <div class="footer-main__stripe-seg"></div>
     <div class="footer-main__stripe-seg"></div>
@@ -3916,23 +3851,23 @@
     <div class="footer-main__stripe-seg"></div>
   </div>
 
-  <!-- Corner puzzle decorations -->
-  <img src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--tl" aria-hidden="true">
-  <img src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--tr" aria-hidden="true">
-  <img src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--bl" aria-hidden="true">
-  <img src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--br" aria-hidden="true">
+  
+  <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--tl" aria-hidden="true">
+  <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--tr" aria-hidden="true">
+  <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--bl" aria-hidden="true">
+  <img loading="lazy" src="Icons/puzzle-icon.png" alt="" class="footer-main__puzzle footer-main__puzzle--br" aria-hidden="true">
 
   <div class="footer-main__body">
 
-    <!-- Logo: heart SVG + name -->
+    
     <div>
       <svg class="footer-main__logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- Heart shape -->
+        
         <path d="M32 54 C32 54 8 38 8 22 C8 14.3 14.3 8 22 8 C26.4 8 30.3 10.1 32 13.4 C33.7 10.1 37.6 8 42 8 C49.7 8 56 14.3 56 22 C56 38 32 54 32 54Z" fill="#3A8FD4" opacity="0.9"/>
-        <!-- Left person silhouette -->
+        
         <ellipse cx="25" cy="27" rx="4" ry="4" fill="white" opacity="0.9"/>
         <path d="M18 42 Q18 34 25 34 Q32 34 32 42" fill="white" opacity="0.9"/>
-        <!-- Right person silhouette -->
+        
         <ellipse cx="39" cy="27" rx="4" ry="4" fill="white" opacity="0.9"/>
         <path d="M32 42 Q32 34 39 34 Q46 34 46 42" fill="white" opacity="0.9"/>
       </svg>
@@ -3942,7 +3877,7 @@
 
     <div class="footer-main__divider"></div>
 
-    <!-- WhatsApp -->
+    
     <a
       class="footer-main__whatsapp"
       href="https://wa.me/5515991232108"
@@ -3950,7 +3885,7 @@
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp: (15) 99123-2108"
     >
-      <!-- WhatsApp SVG icon -->
+      
       <svg class="footer-main__whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
         <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.985l6.337-1.441A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.364l-.36-.213-3.76.856.87-3.665-.234-.376A9.818 9.818 0 1112 21.818z"/>
@@ -3960,23 +3895,19 @@
 
     <div class="footer-main__divider"></div>
 
-    <!-- Copyright -->
+    
     <p class="footer-main__copy">© 2025 Clínica Espaço Saúde. Todos os direitos reservados.</p>
 
   </div>
 </footer>
 
-
-<!-- Lightbox overlay -->
 <div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Visualizar foto">
   <button class="lb-btn" id="lb-close"  aria-label="Fechar">✕</button>
   <button class="lb-btn" id="lb-prev"   aria-label="Foto anterior">‹</button>
-  <img id="lb-img" src="" alt="Foto ampliada do evento">
+  <img loading="lazy" id="lb-img" src="" alt="Foto ampliada do evento">
   <button class="lb-btn" id="lb-next"   aria-label="Próxima foto">›</button>
   <span id="lb-counter"></span>
 </div>
-
-
 
 </body>
 
